@@ -10,7 +10,7 @@ class MyPanel(wx.Panel):
     def __init__(self,parent):
         super(MyPanel,self).__init__(parent)
         
-        rdm=random.sample(range(1,100),8)
+        rdm=random.sample(range(1,30),8)
         rdm.extend(rdm)
         random.shuffle(rdm)
         print(rdm)
