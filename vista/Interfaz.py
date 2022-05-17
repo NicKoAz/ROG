@@ -24,7 +24,8 @@ class Interfaz(wx.Frame):
     def StarGame(self,i):
         ventanaMode=VentanaModoDeJuego(self)
         ventanaMode.ShowModal()
-        ventanaMode.Destroy 
+        ventanaMode.Destroy()
+        Interfaz.Destroy()
     
     def FinishGame(self,i):
         Interfaz()
@@ -48,12 +49,12 @@ class VentanaModoDeJuego(wx.Dialog):
     def ModeContrareloj(self,i):
         ventanaContrareloj=VentanaNivelDificultad(self)
         ventanaContrareloj.ShowModal()
-        ventanaContrareloj.Destroy 
+        ventanaContrareloj.Destroy()
     
     def ModeLibre(self,i):
         ventanaModoLibre=VentanaNivelDificultad(self)
         ventanaModoLibre.ShowModal()
-        ventanaModoLibre.Destroy 
+        ventanaModoLibre.Destroy() 
 
 
 class VentanaNivelDificultad(wx.Dialog):
