@@ -1,2 +1,2 @@
-Class Modelo:
+def Modelo:
 pass
