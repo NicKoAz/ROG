@@ -1,2 +1,2 @@
-Class Main:
-pass
+Class Main ():
+    pass

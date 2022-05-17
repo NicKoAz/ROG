@@ -1,2 +1,2 @@
-Class Modelo:
-pass
+Class Modelo ():
+    pass
