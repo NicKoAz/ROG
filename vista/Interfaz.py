@@ -22,10 +22,10 @@ class Interfaz(wx.Frame):
         self.btn2.Bind(wx.EVT_BUTTON, self.FinishGame)
     
     def StarGame(self,i):
+        self.Hide()
         ventanaMode=VentanaModoDeJuego(self)
         ventanaMode.ShowModal()
         ventanaMode.Destroy()
-        Interfaz.Destroy()
     
     def FinishGame(self,i):
         Interfaz()
@@ -47,11 +47,13 @@ class VentanaModoDeJuego(wx.Dialog):
         self.btn2.Bind(wx.EVT_BUTTON, self.ModeLibre)
     
     def ModeContraReloj(self,i):
+        self.Hide()
         ventanaContraReloj=VentanaNivelDificultad(self)
         ventanaContraReloj.ShowModal()
         ventanaContraReloj.Destroy()
     
     def ModeLibre(self,i):
+        self.Hide()
         ventanaModoLibre=VentanaNivelDificultad(self)
         ventanaModoLibre.ShowModal()
         ventanaModoLibre.Destroy() 
