@@ -43,19 +43,18 @@ class VentanaModoDeJuego(wx.Dialog):
         self.btn2 = wx.Button(self.box1, label = "MODO LIBRE", size=(200, 30), pos=(250, 150))
         
         # Eventos de Botones
-        self.btn1.Bind(wx.EVT_BUTTON, self.ModeContrareloj)
+        self.btn1.Bind(wx.EVT_BUTTON, self.ModeContraReloj)
         self.btn2.Bind(wx.EVT_BUTTON, self.ModeLibre)
     
-    def ModeContrareloj(self,i):
-        ventanaContrareloj=VentanaNivelDificultad(self)
-        ventanaContrareloj.ShowModal()
-        ventanaContrareloj.Destroy()
+    def ModeContraReloj(self,i):
+        ventanaContraReloj=VentanaNivelDificultad(self)
+        ventanaContraReloj.ShowModal()
+        ventanaContraReloj.Destroy()
     
     def ModeLibre(self,i):
         ventanaModoLibre=VentanaNivelDificultad(self)
         ventanaModoLibre.ShowModal()
         ventanaModoLibre.Destroy() 
-
 
 class VentanaNivelDificultad(wx.Dialog):
     def __init__ (self, parent):
