@@ -1,2 +1,2 @@
-Class Controlador ():
+class Controlador ():
     pass
