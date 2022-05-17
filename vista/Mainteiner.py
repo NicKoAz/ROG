@@ -1,2 +1,3 @@
-class Pieza:
+class Pieza():
+    pass
     
