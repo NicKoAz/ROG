@@ -3,9 +3,22 @@ Created on 24-05-2022
 
 @author: carol
 '''
+
 import wx
+
+'''
+    Esto es un documento
+'''
+
+##
+#Esto es una clase
+#
  
 class VentanaNivelDificultad(wx.Dialog):
+    ##
+    # Este metodo es para crear el constructor de la clase VentanaNivelDificultad 
+    # @param parent sirve para 
+    #
     def __init__ (self, parent):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Nivel De Dificultad", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(350, 350))
         

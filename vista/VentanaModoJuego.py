@@ -5,8 +5,7 @@ Created on 24-05-2022
 '''
 
 import wx
-from modelo.VentanaDificultad import VentanaNivelDificultad
-
+from vista.VentanaDificultad import VentanaNivelDificultad
 
 class VentanaModoDeJuego(wx.Dialog):
     def __init__ (self, parent):
