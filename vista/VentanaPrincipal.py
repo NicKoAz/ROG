@@ -7,7 +7,19 @@ Created on 16-05-2022
 import wx
 from vista.VentanaModoJuego import VentanaModoDeJuego
 
+'''
+    Esto es un documento
+'''
+
+##
+#Esto es una clase
+#
+
 class VentanaPrincipal(wx.Frame):
+    ##
+    # Este metodo es para crear 
+    # @param parent sirve para heredar
+    #
     def __init__(self):
         wx.Frame.__init__(self, None, title="Encontrar Los Pares", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(350, 350))
         
@@ -26,12 +38,21 @@ class VentanaPrincipal(wx.Frame):
         self.btn1.Bind(wx.EVT_BUTTON, self.StarGame)
         self.btn2.Bind(wx.EVT_BUTTON, self.FinishGame)
 
-    
+    ##
+    # Este metodo es para 
+    # @param i sirve para
+    #
+        
     def StarGame(self,i):
         self.Hide()
         ventanaMode=VentanaModoDeJuego(self)
         ventanaMode.ShowModal()
         ventanaMode.Destroy()
+    
+    ##
+    # Este metodo es para 
+    # @param i sirve para 
+    #
     
     def FinishGame(self,i):
         VentanaPrincipal()
