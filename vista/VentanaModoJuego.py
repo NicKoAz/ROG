@@ -25,18 +25,24 @@ class VentanaModoDeJuego(wx.Dialog):
         
         self.panel = wx.Panel(self)
         
-        self.box1 = wx.StaticBox(self.panel, wx.ID_ANY, pos=(10,0),size=(310, 300))
-        self.lbl1 = wx.StaticText(self.box1, -1, 'MODOS DE JUEGO', pos =(100,50))
-        self.btn1 = wx.Button(self.box1, label = "CONTRARELOJ", size=(200, 50), pos=(50, 100))
-        self.btn2 = wx.Button(self.box1, label = "MODO LIBRE", size=(200, 50), pos=(50, 170))
+        self.box1 = wx.StaticBox(self.panel, wx.ID_ANY, pos=(0,-7),size=(350, 350))
+        self.lbl1 = wx.StaticText(self.box1, -1, 'MODOS DE JUEGO', pos =(83,75))
+        self.btn1 = wx.Button(self.box1, label = "CONTRARELOJ", size=(150, 50), pos=(93, 125))
+        self.btn2 = wx.Button(self.box1, label = "MODO LIBRE", size=(150, 50), pos=(93, 195))
         
-        #Color Letra Botones
-        self.btn1.SetForegroundColour((3, 152, 252, 255))
-        self.btn2.SetForegroundColour((3, 152, 252, 255)) 
+        #Modificar Fuente
+        font1=self.lbl1.GetFont()
+        font1.SetPointSize(15)
+        self.lbl1.SetFont(font1)
+        
+        #Color fondo stacticBox
+        self.box1.SetBackgroundColour("#0FFFFF")   
         
         # Eventos de Botones
         self.btn1.Bind(wx.EVT_BUTTON, self.ModeContraReloj)
         self.btn2.Bind(wx.EVT_BUTTON, self.ModeLibre)
+
+        self.Centre(True)
     
     ##
     # Este metodo es para crear
