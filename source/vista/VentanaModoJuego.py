@@ -11,15 +11,17 @@ from source.vista.VentanaDificultad import VentanaNivelDificultad
     Esto es un documento
 '''
 
-##
-#Esto es una clase
-#
+'''
+Esto es una clase
+'''
 
 class VentanaModoDeJuego(wx.Dialog):
-    ##
-    # Este metodo es para crear
-    # @param parent sirve para heredar
-    #
+    
+    '''
+    Este metodo es para crear
+    :parent: sirve para heredar
+    '''
+    
     def __init__ (self, parent):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Modos De Juego", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(350, 350))
         
@@ -44,10 +46,10 @@ class VentanaModoDeJuego(wx.Dialog):
 
         self.Centre(True)
     
-    ##
-    # Este metodo es para crear
-    # @param i sirve para 
-    #
+    '''
+    Este metodo es para crear
+    :i: sirve para 
+    '''
     
     def ModeContraReloj(self,i):
         self.Hide()
@@ -55,10 +57,10 @@ class VentanaModoDeJuego(wx.Dialog):
         ventanaContraReloj.ShowModal()
         ventanaContraReloj.Destroy()
     
-    ##
-    # Este metodo es para
-    # @param i sirve para
-    #
+    '''
+    Este metodo es para
+    :i: sirve para
+    '''
     
     def ModeLibre(self,i):
         self.Hide()

@@ -10,15 +10,17 @@ import wx
     Esto es un documento
 '''
 
-##
-#Esto es una clase
-#
+'''
+Esto es una clase
+'''
  
 class VentanaNivelDificultad(wx.Dialog):
-    ##
-    # Este metodo es para 
-    # @param parent
-    #
+    
+    '''
+    Este metodo es para 
+    :parent: Sirve para
+    '''
+    
     def __init__ (self, parent):
         wx.Dialog.__init__(self, parent, wx.NewId(),title = "Nivel De Dificultad", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(350, 350))
         
