@@ -5,6 +5,7 @@ Created on 24-05-2022
 '''
 
 import wx
+from vista.PruebaVentana import PruebaVentana
 
 '''
 Esto es un documento
@@ -28,9 +29,9 @@ class VentanaNivelDificultad(wx.Dialog):
         
         self.box1 = wx.StaticBox(self.panel, wx.ID_ANY, pos=(0,-7),size=(350, 350))
         self.lbl1 = wx.StaticText(self.box1, -1, "NIVEL DE DIFICULTAD" , pos =(73,50))
-        self.btn1 = wx.Button(self.box1, label = "FACIL", size=(150, 50), pos=(93, 100))
-        self.btn2 = wx.Button(self.box1, label = "NORMAL", size=(150, 50), pos=(93, 160))
-        self.btn3 = wx.Button(self.box1, label = "DIFICIL", size=(150, 50), pos=(93, 220))      
+        self.btnfacil = wx.Button(self.box1, label = "FACIL", size=(150, 50), pos=(93, 100))
+        self.btnnormal = wx.Button(self.box1, label = "NORMAL", size=(150, 50), pos=(93, 160))
+        self.btndificil = wx.Button(self.box1, label = "DIFICIL", size=(150, 50), pos=(93, 220))      
         
         #Modificar Fuente
         font1=self.lbl1.GetFont()
@@ -42,7 +43,38 @@ class VentanaNivelDificultad(wx.Dialog):
         
         self.Centre(True)
         
-        # Eventos de Botones
-        #self.btn1.Bind(wx.EVT_BUTTON, self.NivelFacil)
-        #self.btn2.Bind(wx.EVT_BUTTON, self.NivelNormal)
-        #self.btn3.Bind(wx.EVT_BUTTON, self.NivelDificil)
+        #Eventos de Botones
+        self.btnfacil.Bind(wx.EVT_BUTTON, self.NivelFacil)
+        self.btnnormal.Bind(wx.EVT_BUTTON, self.NivelNormal)
+        self.btndificil.Bind(wx.EVT_BUTTON, self.NivelDificil)
+        
+    def NivelFacil(self,i):
+        #if self.btncontrareloj and self.btnfacil:
+        self.Hide()
+        VentanaNivelDificultad=PruebaVentana(self)
+        VentanaNivelDificultad.ShowModal()
+        VentanaNivelDificultad.Destroy()
+        #elif (self.btnmodolibre and self.btnfacil):
+            #pass
+            
+    def NivelNormal(self,i):
+        #if (self.btncontrareloj and self.btnnormal):
+            #pass
+        self.Hide()
+        VentanaNivelDificultad=PruebaVentana(self)
+        VentanaNivelDificultad.ShowModal()
+        VentanaNivelDificultad.Destroy()
+        #elif (self.btnmodolibre and self.btnnormal):
+            #pass
+            
+    
+    def NivelDificil(self,i):
+        #if (self.btncontrareloj and self.btndificil):
+            #pass
+        self.Hide()
+        VentanaNivelDificultad=PruebaVentana(self)
+        VentanaNivelDificultad.ShowModal()
+        VentanaNivelDificultad.Destroy()
+        #elif (self.btnmodolibre and self.btndificil):
+            #pass
+            
