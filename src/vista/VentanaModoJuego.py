@@ -9,17 +9,22 @@ from vista.VentanaDificultad import VentanaNivelDificultad
 
 '''
     Esto es un documento
+    
 '''
 
 '''
 Esto es una clase
+
+
 '''
 
 class VentanaModoDeJuego(wx.Dialog):
     
     '''
     Este metodo es el __init__, es el constructor de la clase VentanaModoDeJuego
+    
     :parent: Este es un parametro inicial que sirve para abrir una ventana
+    
     '''
     
     def __init__ (self, parent):
@@ -48,7 +53,9 @@ class VentanaModoDeJuego(wx.Dialog):
     
     '''
     Este metodo es para darle una funcion especifica al boton contrareloj
+    
     :i: es un evento que sirve para abrir una ventana
+    
     '''
     
     def ModeContraReloj(self,i):
@@ -59,7 +66,9 @@ class VentanaModoDeJuego(wx.Dialog):
     
     '''
     Este metodo es para darle una funcion especifica al boton modelibre
+    
     :i: es un evento que sirve para abrir una ventana
+    
     '''
     
     def ModeLibre(self,i):
