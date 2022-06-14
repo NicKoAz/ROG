@@ -5,7 +5,7 @@ Created on 16-05-2022
 '''
 
 import wx
-from source.vista.VentanaPrincipal import VentanaPrincipal
+from src.vista.VentanaPrincipal import VentanaPrincipal
 
 if __name__ == "__main__":
     app = wx.App()

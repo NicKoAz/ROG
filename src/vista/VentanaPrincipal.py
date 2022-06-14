@@ -5,7 +5,7 @@ Created on 16-05-2022
 '''
 
 import wx
-from source.vista.VentanaModoJuego import VentanaModoDeJuego
+from src.vista.VentanaModoJuego import VentanaModoDeJuego
 
 '''
     Esto es un documento
