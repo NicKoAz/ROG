@@ -38,7 +38,7 @@ class VentanaNivelDificultad(wx.Dialog):
         self.lbl1.SetFont(font1)
         
         #Color fondo stacticBox
-        self.box1.SetBackgroundColour("#0FFFFF")
+        self.box1.SetBackgroundColour("#B9D9D7")
         
         self.Centre(True)
         

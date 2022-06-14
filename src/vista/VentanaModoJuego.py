@@ -38,7 +38,7 @@ class VentanaModoDeJuego(wx.Dialog):
         self.lbl1.SetFont(font1)
         
         #Color fondo stacticBox
-        self.box1.SetBackgroundColour("#0FFFFF")   
+        self.box1.SetBackgroundColour("#B9D9D7")   
         
         # Eventos de Botones
         self.btn1.Bind(wx.EVT_BUTTON, self.ModeContraReloj)
