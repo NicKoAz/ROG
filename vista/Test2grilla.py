@@ -4,7 +4,7 @@ from wx import ALIGN_CENTER
 
 
 def GetLabel(event):
-    nombreboton=event.GetEventObject().GetLabel()
+    nombreboton=event.GetEventObject().GetName()
     print(nombreboton)
     
 
@@ -30,11 +30,12 @@ class MyPanel(wx.Panel):
         #for i in range(1,17):
         for i in (rdm):
             #btn="btn"+ str(i)
+            imagefile=wx.Image("../Cards/1.png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
             btn=str(i)
-            gridsizer.Add(wx.Button(self, label=btn,name=btn),-1,wx.EXPAND)     #era0envezde-1
+            gridsizer.Add(wx.BitmapButton(self,name=btn,bitmap=imagefile),-1,wx.EXPAND)     #era0envezde-1
             self.SetSizer(gridsizer)
             self.Bind( wx.EVT_BUTTON,GetLabel)
-            imagefile=wx.Image("../Cards/back.png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
+            
             
             self.btn=wx.BitmapButton(self,id= -1)
             
