@@ -5,7 +5,7 @@ Created on 24-05-2022
 '''
 
 import wx
-from src.vista.VentanaDificultad import VentanaNivelDificultad
+from vista.VentanaDificultad import VentanaNivelDificultad
 
 '''
     Esto es un documento
