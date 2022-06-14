@@ -17,8 +17,8 @@ Esto es una clase
 class VentanaNivelDificultad(wx.Dialog):
     
     '''
-    Este metodo es para 
-    :parent: Sirve para
+    Este metodo es el __init__, constructor de la clase VentanaNivelDificultad
+    :parent: Es un parametro inicial que sirve para abrir una ventana
     '''
     
     def __init__ (self, parent):

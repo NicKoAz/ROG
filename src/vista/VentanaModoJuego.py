@@ -18,8 +18,8 @@ Esto es una clase
 class VentanaModoDeJuego(wx.Dialog):
     
     '''
-    Este metodo es para crear
-    :parent: sirve para heredar
+    Este metodo es el __init__, es el constructor de la clase VentanaModoDeJuego
+    :parent: Este es un parametro inicial que sirve para abrir una ventana
     '''
     
     def __init__ (self, parent):
@@ -47,8 +47,8 @@ class VentanaModoDeJuego(wx.Dialog):
         self.Centre(True)
     
     '''
-    Este metodo es para crear
-    :i: sirve para 
+    Este metodo es para darle una funcion especifica al boton contrareloj
+    :i: es un evento que sirve para abrir una ventana
     '''
     
     def ModeContraReloj(self,i):
@@ -58,8 +58,8 @@ class VentanaModoDeJuego(wx.Dialog):
         ventanaContraReloj.Destroy()
     
     '''
-    Este metodo es para
-    :i: sirve para
+    Este metodo es para darle una funcion especifica al boton modelibre
+    :i: es un evento que sirve para abrir una ventana
     '''
     
     def ModeLibre(self,i):
