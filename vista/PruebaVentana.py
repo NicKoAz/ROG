@@ -7,10 +7,7 @@ Created on 14-06-2022
 import wx
 
 class PruebaVentana(wx.Dialog):
-    '''
-    Este metodo es para crear
-    @param parent sirve para heredar
-    '''
+
     def __init__ (self, parent):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Grilla", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(350, 350))
         
