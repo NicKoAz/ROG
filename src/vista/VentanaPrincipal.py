@@ -8,20 +8,16 @@ import wx
 from vista.VentanaModoJuego import VentanaModoDeJuego
 
 '''
-    Esto es un documento
-    
+    Esto es un documento  
 '''
 
 '''
-Esto es una clase
-
-
+    Esto es una clase
 '''
 
 class VentanaPrincipal(wx.Frame):
     '''
     Este metodo es el __init__, el constructor de la clase VentanaPrincipal
-    
     '''
     def __init__(self):
         wx.Frame.__init__(self, None, title="Encontrar Los Pares", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(350, 350))
@@ -46,28 +42,25 @@ class VentanaPrincipal(wx.Frame):
         self.btn2.Bind(wx.EVT_BUTTON, self.FinishGame)
         
         self.Centre(True)
-    
-    '''
-    Este metodo es para darle una funcion al boton "iniciar juego"
-    
-    :i: es un evento que sirve para abrir una ventana
-    
-    '''
         
     def StarGame(self,i):
+        '''
+        Este metodo es para darle una funcion al boton "iniciar juego"
+    
+        :i: es un evento que sirve para abrir una ventana
+        '''
         self.Hide()
         ventanaMode=VentanaModoDeJuego(self)
         ventanaMode.ShowModal()
         ventanaMode.Destroy()
     
-    '''
-    Este metodo es para darle una funcion al boton "Salir del juego"
-    
-    :i: es un evento que sirve para cerrar la ventana
-    
-    '''
     
     def FinishGame(self,i):
+        '''
+        Este metodo es para darle una funcion al boton "Salir del juego"
+    
+        :i: es un evento que sirve para cerrar la ventana
+        '''
         VentanaPrincipal()
         self.Destroy()
 

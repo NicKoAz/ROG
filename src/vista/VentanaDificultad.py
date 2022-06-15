@@ -12,7 +12,7 @@ import wx
 '''
 
 '''
-Esto es una clase
+    Esto es una clase
 
 '''
  

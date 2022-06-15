@@ -8,25 +8,20 @@ import wx
 from vista.VentanaDificultad import VentanaNivelDificultad
 
 '''
-    Esto es un documento
-    
+    Esto es un documento 
 '''
 
 '''
 Esto es una clase
 
-
 '''
 
 class VentanaModoDeJuego(wx.Dialog):
-    
     '''
     Este metodo es el __init__, es el constructor de la clase VentanaModoDeJuego
     
     :parent: Este es un parametro inicial que sirve para abrir una ventana
-    
     '''
-    
     def __init__ (self, parent):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Modos De Juego", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(350, 350))
         
@@ -51,27 +46,24 @@ class VentanaModoDeJuego(wx.Dialog):
 
         self.Centre(True)
     
-    '''
-    Este metodo es para darle una funcion especifica al boton contrareloj
-    
-    :i: es un evento que sirve para abrir una ventana
-    
-    '''
     
     def ModeContraReloj(self,i):
+        '''
+        Este metodo es para darle una funcion especifica al boton contrareloj
+        
+        :i: es un evento que sirve para abrir una ventana
+        '''
         self.Hide()
         ventanaContraReloj=VentanaNivelDificultad(self)
         ventanaContraReloj.ShowModal()
         ventanaContraReloj.Destroy()
     
-    '''
-    Este metodo es para darle una funcion especifica al boton modelibre
-    
-    :i: es un evento que sirve para abrir una ventana
-    
-    '''
-    
     def ModeLibre(self,i):
+        '''
+        Este metodo es para darle una funcion especifica al boton modelibre
+        
+        :i: es un evento que sirve para abrir una ventana
+        '''
         self.Hide()
         ventanaModoLibre=VentanaNivelDificultad(self)
         ventanaModoLibre.ShowModal()

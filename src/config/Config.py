@@ -10,9 +10,6 @@ class Config():
     
     def __init__(self):
         self.config = configparser.ConfigParser()
-        self.config.read("config.ini")
+        self.config.read('config.ini')
     def getConfigFacil(self):
-        return (int(self.config["DIFICULTAD"]["filaFacil"]),int(self.config["DIFICULTAD"]["columnaFacil"]))
-
-config = Config()
-print(config.getConfigFacil())
+        return (int(self.config['DIFICULTAD']['filaFacil']),int(self.config['DIFICULTAD']['columnaFacil']))
