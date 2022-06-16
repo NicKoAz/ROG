@@ -44,4 +44,4 @@ class VentanaModoDeJuego(wx.Dialog):
         self.Hide()
         ventanaModoLibre=VentanaNivelDificultad(self)
         ventanaModoLibre.ShowModal()
-        ventanaModoLibre.Destroy() 
+        ventanaModoLibre.Destroy()

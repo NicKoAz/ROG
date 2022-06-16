@@ -37,32 +37,20 @@ class VentanaNivelDificultad(wx.Dialog):
         self.btndificil.Bind(wx.EVT_BUTTON, self.NivelDificil)
         
     def NivelFacil(self,i):
-        #if self.btncontrareloj and self.btnfacil:
         self.Hide()
         VentanaNivelDificultad=PruebaVentana(self)
         VentanaNivelDificultad.ShowModal()
         VentanaNivelDificultad.Destroy()
-        #elif (self.btnmodolibre and self.btnfacil):
-            #pass
-            
+        
     def NivelNormal(self,i):
-        #if (self.btncontrareloj and self.btnnormal):
-            #pass
         self.Hide()
         VentanaNivelDificultad=PruebaVentana(self)
         VentanaNivelDificultad.ShowModal()
         VentanaNivelDificultad.Destroy()
-        #elif (self.btnmodolibre and self.btnnormal):
-            #pass
             
-    
     def NivelDificil(self,i):
-        #if (self.btncontrareloj and self.btndificil):
-            #pass
         self.Hide()
         VentanaNivelDificultad=PruebaVentana(self)
         VentanaNivelDificultad.ShowModal()
         VentanaNivelDificultad.Destroy()
-        #elif (self.btnmodolibre and self.btndificil):
-            #pass
-            
+    
