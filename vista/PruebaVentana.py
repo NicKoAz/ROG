@@ -24,5 +24,4 @@ class PruebaVentana(wx.Dialog):
         #Color fondo stacticBox
         self.box1.SetBackgroundColour("#B9D9D7")
         
-        self.Centre(True) 
-        
+        self.Centre(True)
