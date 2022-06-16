@@ -5,4 +5,3 @@ for minutos in range (0,20):
             os.system ("cls")
             print(f"El tiempo que llevas jugando es de: {minutos}:{segundos}")
             time.sleep(1)
-
