@@ -1,5 +1,4 @@
 import time
-import os
 import wx
 
 class ContraReloj(wx.Frame):
@@ -8,7 +7,7 @@ class ContraReloj(wx.Frame):
     
         wx.Frame.__init__(self, None, title='Cronometro')
         panel = wx.Panel(self)
-        self.counter = 0
+        self.counter = 300
 
         font = wx.Font(24, wx.FONTFAMILY_ROMAN,
                        wx.FONTSTYLE_NORMAL,
@@ -30,24 +29,22 @@ class ContraReloj(wx.Frame):
 
         self.Show()
 
-    def start(self, evento):
-        self.timer.Start()
+    def start(self, e):
+        self.timer.Start(1000)
 
-    def update(self, evento):
-        for counter in range (2):
-            for contador in range (60):
-                os.system ("cls")
-                time.sleep(1)
-                self.lbl.SetLabel(f" {counter}:{self.contador}")
-                
-                if counter == 2:
-                    self.timer.Stop()
-                    self.lbl.SetLabel('KA-BOOM!')
+    def update(self, event):
+        if self.counter == 0:
+            self.timer.Stop()
+            self.lbl.SetLabel('El juego ha terminado')
+            return
+        else:
+            minutos = self.counter // 60
+            segundos = self.counter - (minutos * 60)
+            self.counter -= 1
 
-        self.lbl.SetLabel(str(counter))
-        
+        self.lbl.SetLabel(f"{str(minutos)}:{str(segundos)}")
     
-    
+
 
 if __name__ == '__main__':
     app = wx.App(False)
