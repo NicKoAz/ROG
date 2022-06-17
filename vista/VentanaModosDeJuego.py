@@ -59,4 +59,6 @@ class VentanaModosDeJuego(wx.Dialog):
         ventanaModoLibre=PruebaVentana(self)
         ventanaModoLibre.ShowModal()
         ventanaModoLibre.Destroy()
-        
+    
+    def OnClick(self,event):
+        print(u"Botón presionado: %s"%(event.EventObject.GetLabel()))
