@@ -1,5 +1,3 @@
-class Main():
-    pass
 
 import wx
 from vista.VentanaPrincipal import VentanaPrincipal
