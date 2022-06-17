@@ -1,11 +1,11 @@
-import time
 import wx
+import time
 
 class ContraReloj(wx.Frame):
     
     def __init__(self):
     
-        wx.Frame.__init__(self, None, title='Cronometro')
+        wx.Frame.__init__(self, None, title='Contra-Reloj')
         panel = wx.Panel(self)
         self.counter = 300
 
