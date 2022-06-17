@@ -16,12 +16,13 @@ class PruebaVentana(wx.Dialog):
         self.box1 = wx.StaticBox(self.panel, wx.ID_ANY, pos=(0,-7),size=(350, 350))
         self.lbl1 = wx.StaticText(self.box1, -1, 'Supuesta ventana Grilla', pos =(83,75))
         
-        #Modificar Fuente
+        #Modificar fuente de letra StaticText
         font1=self.lbl1.GetFont()
         font1.SetPointSize(15)
         self.lbl1.SetFont(font1)
         
-        #Color fondo stacticBox
+        #Modificar color de fondo del StaticBox
         self.box1.SetBackgroundColour("#B9D9D7")
         
+        #Para que la ventana se abra en el centro de la pantalla
         self.Centre(True)

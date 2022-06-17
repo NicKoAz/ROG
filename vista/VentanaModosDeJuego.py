@@ -17,95 +17,50 @@ class VentanaModosDeJuego(wx.Dialog):
         self.box1 = wx.StaticBox(self.panel, wx.ID_ANY, pos=(0,-7),size=(568, 400))
         self.lbl1 = wx.StaticText(self.box1, -1, 'MODOS DE JUEGO', pos =(162,50))
         
-        self.btncontrareloj1 = wx.Button(self.box1, label = "CONTRARELOJ-FACIL", size=(155, 50), pos=(93, 125))
-        self.btncontrareloj2 = wx.Button(self.box1, label = "CONTRARELOJ-NORMAL", size=(155, 50), pos=(93, 190))
-        self.btncontrareloj3 = wx.Button(self.box1, label = "CONTRARELOJ-DIFICIL", size=(155, 50), pos=(93, 255))
+        self.btncontrarelojfacil = wx.Button(self.box1, label = "CONTRARELOJ-FACIL", size=(155, 50), pos=(93, 125))
+        self.btncontrarelojnormal = wx.Button(self.box1, label = "CONTRARELOJ-NORMAL", size=(155, 50), pos=(93, 190))
+        self.btncontrarelojdificil = wx.Button(self.box1, label = "CONTRARELOJ-DIFICIL", size=(155, 50), pos=(93, 255))
         
-        self.btnmodolibre1 = wx.Button(self.box1, label = "MODO LIBRE-FACIL", size=(155, 50), pos=(300, 125))
-        self.btnmodolibre2 = wx.Button(self.box1, label = "MODO LIBRE-NORMAL", size=(155, 50), pos=(300, 190))
-        self.btnmodolibre3 = wx.Button(self.box1, label = "MODO LIBRE-DIFICIL", size=(155, 50), pos=(300, 255))
+        self.btnmodolibrefacil = wx.Button(self.box1, label = "MODO LIBRE-FACIL", size=(155, 50), pos=(300, 125))
+        self.btnmodolibrenormal = wx.Button(self.box1, label = "MODO LIBRE-NORMAL", size=(155, 50), pos=(300, 190))
+        self.btnmodolibredificil = wx.Button(self.box1, label = "MODO LIBRE-DIFICIL", size=(155, 50), pos=(300, 255))
     
         
-        #Modificar Fuente
+        #Modificar fuente de letra StaticText
         font1=self.lbl1.GetFont()
         font1.SetPointSize(20)
         self.lbl1.SetFont(font1)
         
-        #Color fondo stacticBox
+        #Modificar el color de fondo del StaticBox
         self.box1.SetBackgroundColour("#B9D9D7")   
         
+        #Para que la ventana se abra en el centro de la pantalla
         self.Centre(True)
         
-
-        # Eventos de Botones
-        self.btncontrareloj1.Bind(wx.EVT_BUTTON, self.OnClick1)
-        self.btncontrareloj2.Bind(wx.EVT_BUTTON, self.OnClick2)
-        self.btncontrareloj3.Bind(wx.EVT_BUTTON, self.OnClick3)
-        self.btnmodolibre1.Bind(wx.EVT_BUTTON, self.OnClick4)
-        self.btnmodolibre2.Bind(wx.EVT_BUTTON, self.OnClick5)
-        self.btnmodolibre3.Bind(wx.EVT_BUTTON, self.OnClick6)
+        #Eventos de Botones
+        self.btncontrarelojfacil.Bind(wx.EVT_BUTTON, self.OnClick)
+        self.btncontrarelojnormal.Bind(wx.EVT_BUTTON, self.OnClick)
+        self.btncontrarelojdificil.Bind(wx.EVT_BUTTON, self.OnClick)
+        self.btnmodolibrefacil.Bind(wx.EVT_BUTTON, self.OnClick)
+        self.btnmodolibrenormal.Bind(wx.EVT_BUTTON, self.OnClick)
+        self.btnmodolibredificil.Bind(wx.EVT_BUTTON, self.OnClick)
         
-
+        #Para que la ventana se abra en el centro de la pantalla
         self.Centre(True)
         
-    def OnClick1(self,event):
-        label1=event.GetEventObject().GetLabel()
-        print(label1)
-        self.Hide()
-        ventanaContraReloj=PruebaVentana(self)
-        ventanaContraReloj.ShowModal()
-        ventanaContraReloj.Destroy()
+    #Funcion que permite guardar el nombre del boton en el que se hizo click y abrir la ventana del juego
         
-    def OnClick2(self,event):
-        label2=event.GetEventObject().GetLabel()
-        print(label2)
+    def OnClick(self,event):
+        labelbotones=event.GetEventObject().GetLabel()
+        print(labelbotones)
         self.Hide()
         ventanaContraReloj=PruebaVentana(self)
         ventanaContraReloj.ShowModal()
         ventanaContraReloj.Destroy()
+'''  
         
-    def OnClick3(self,event):
-        label3=event.GetEventObject().GetLabel()
-        print(label3)
-        self.Hide()
-        ventanaContraReloj=PruebaVentana(self)
-        ventanaContraReloj.ShowModal()
-        ventanaContraReloj.Destroy()
-        
-    def OnClick4(self,event):
-        label4=event.GetEventObject().GetLabel()
-        print(label4)
-        self.Hide()
-        ventanaContraReloj=PruebaVentana(self)
-        ventanaContraReloj.ShowModal()
-        ventanaContraReloj.Destroy()
-        
-    def OnClick5(self,event):
-        label5=event.GetEventObject().GetLabel()
-        print(label5)
-        self.Hide()
-        ventanaContraReloj=PruebaVentana(self)
-        ventanaContraReloj.ShowModal()
-        ventanaContraReloj.Destroy()
-        
-    def OnClick6(self,event):
-        label6=event.GetEventObject().GetLabel()
-        print(label6)
-        self.Hide()
-        ventanaContraReloj=PruebaVentana(self)
-        ventanaContraReloj.ShowModal()
-        ventanaContraReloj.Destroy()
+    def GeneradorJuego(self):
+        if labelbotones=="CONTRARELOJ-FACIL":
+            print(labelbotones)
+'''
 
-'''
-    def ModoContraReloj(self,i):
-        self.Hide()
-        ventanaContraReloj=PruebaVentana(self)
-        ventanaContraReloj.ShowModal()
-        ventanaContraReloj.Destroy()
-    
-    def ModoLibre(self,i):
-        self.Hide()
-        ventanaModoLibre=PruebaVentana(self)
-        ventanaModoLibre.ShowModal()
-        ventanaModoLibre.Destroy()
-'''

@@ -20,26 +20,29 @@ class VentanaPrincipal(wx.Frame):
         self.btn1 = wx.Button(self.box1, label = "INICIAR EL JUEGO", size=(165, 60), pos=(190, 135))
         self.btn2 = wx.Button(self.box1, label = "SALIR DEL JUEGO", size=(165, 60), pos=(190, 220))
         
-        #Modificar Fuente StaticText y Button
+        #Modificar fuente de letra StaticText
         font1=self.lbl1.GetFont()
         font1.SetPointSize(20)
         self.lbl1.SetFont(font1)
         
+        #Modificar fuente de letra Button 1
         font1=self.btn1.GetFont()
         font1.SetPointSize(12)
         self.btn1.SetFont(font1) 
         
+        #Modificar fuente de letra Button 2
         font1=self.btn2.GetFont()
         font1.SetPointSize(12)
         self.btn2.SetFont(font1)       
         
-        #Color fondo stacticBox
+        #Modificar color de fondo del StaticBox
         self.box1.SetBackgroundColour("#B9D9D7")
         
-        # Eventos de Botones
+        #Eventos de Botones
         self.btn1.Bind(wx.EVT_BUTTON, self.StarGame)
         self.btn2.Bind(wx.EVT_BUTTON, self.FinishGame)
         
+        #Para que la ventana se abra en el centro de la pantalla
         self.Centre(True)
 
         
