@@ -30,19 +30,24 @@ class ContraReloj(wx.Frame):
 
         self.Show()
 
-    def start(self, e):
-        self.timer.Start(1000)
+    def start(self, evento):
+        self.timer.Start()
 
-    def update(self, e):
-        for self.counter in range (0,10):
-            for self.contador in range (60):
+    def update(self, evento):
+        for counter in range (2):
+            for contador in range (60):
                 os.system ("cls")
                 time.sleep(1)
-                self.lbl.SetLabel(f" {self.counter}:{self.contador}")
-            return
+                self.lbl.SetLabel(f" {counter}:{self.contador}")
+                
+                if counter == 2:
+                    self.timer.Stop()
+                    self.lbl.SetLabel('KA-BOOM!')
 
-        self.lbl.SetLabel(str(self.counter))
-
+        self.lbl.SetLabel(str(counter))
+        
+    
+    
 
 if __name__ == '__main__':
     app = wx.App(False)
