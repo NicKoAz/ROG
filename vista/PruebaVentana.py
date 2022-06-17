@@ -14,7 +14,7 @@ class PruebaVentana(wx.Dialog):
         self.panel = wx.Panel(self)
         
         self.box1 = wx.StaticBox(self.panel, wx.ID_ANY, pos=(0,-7),size=(350, 350))
-        self.lbl1 = wx.StaticText(self.box1, -1, 'Supuesta ventana Grilla', pos =(83,75))
+        self.lbl1 = wx.StaticText(self.box1, -1, 'Supuesta Grilla', pos =(83,75))
         
         #Modificar fuente de letra StaticText
         font1=self.lbl1.GetFont()

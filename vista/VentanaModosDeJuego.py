@@ -58,9 +58,7 @@ class VentanaModosDeJuego(wx.Dialog):
         ventanaContraReloj.ShowModal()
         ventanaContraReloj.Destroy()
 '''  
-        
     def GeneradorJuego(self):
         if labelbotones=="CONTRARELOJ-FACIL":
-            print(labelbotones)
 '''
 
