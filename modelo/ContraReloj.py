@@ -5,7 +5,7 @@ class ContraReloj(wx.Frame):
     
     def __init__(self):
     
-        wx.Frame.__init__(self, None, title='Contra-Reloj')
+        wx.Frame.__init__(self, None, title='ContraReloj')
         panel = wx.Panel(self)
         self.counter = 300
 
