@@ -38,16 +38,65 @@ class VentanaModosDeJuego(wx.Dialog):
         
 
         # Eventos de Botones
-        self.btncontrareloj1.Bind(wx.EVT_BUTTON, self.ModoContraReloj)
-        self.btncontrareloj2.Bind(wx.EVT_BUTTON, self.ModoContraReloj)
-        self.btncontrareloj3.Bind(wx.EVT_BUTTON, self.ModoContraReloj)
-        self.btnmodolibre1.Bind(wx.EVT_BUTTON, self.ModoLibre)
-        self.btnmodolibre2.Bind(wx.EVT_BUTTON, self.ModoLibre)
-        self.btnmodolibre3.Bind(wx.EVT_BUTTON, self.ModoLibre)
-
+        self.btncontrareloj1.Bind(wx.EVT_BUTTON, self.OnClick1)
+        self.btncontrareloj2.Bind(wx.EVT_BUTTON, self.OnClick2)
+        self.btncontrareloj3.Bind(wx.EVT_BUTTON, self.OnClick3)
+        self.btnmodolibre1.Bind(wx.EVT_BUTTON, self.OnClick4)
+        self.btnmodolibre2.Bind(wx.EVT_BUTTON, self.OnClick5)
+        self.btnmodolibre3.Bind(wx.EVT_BUTTON, self.OnClick6)
+        
 
         self.Centre(True)
+        
+    def OnClick1(self,event):
+        label1=event.GetEventObject().GetLabel()
+        print(label1)
+        self.Hide()
+        ventanaContraReloj=PruebaVentana(self)
+        ventanaContraReloj.ShowModal()
+        ventanaContraReloj.Destroy()
+        
+    def OnClick2(self,event):
+        label2=event.GetEventObject().GetLabel()
+        print(label2)
+        self.Hide()
+        ventanaContraReloj=PruebaVentana(self)
+        ventanaContraReloj.ShowModal()
+        ventanaContraReloj.Destroy()
+        
+    def OnClick3(self,event):
+        label3=event.GetEventObject().GetLabel()
+        print(label3)
+        self.Hide()
+        ventanaContraReloj=PruebaVentana(self)
+        ventanaContraReloj.ShowModal()
+        ventanaContraReloj.Destroy()
+        
+    def OnClick4(self,event):
+        label4=event.GetEventObject().GetLabel()
+        print(label4)
+        self.Hide()
+        ventanaContraReloj=PruebaVentana(self)
+        ventanaContraReloj.ShowModal()
+        ventanaContraReloj.Destroy()
+        
+    def OnClick5(self,event):
+        label5=event.GetEventObject().GetLabel()
+        print(label5)
+        self.Hide()
+        ventanaContraReloj=PruebaVentana(self)
+        ventanaContraReloj.ShowModal()
+        ventanaContraReloj.Destroy()
+        
+    def OnClick6(self,event):
+        label6=event.GetEventObject().GetLabel()
+        print(label6)
+        self.Hide()
+        ventanaContraReloj=PruebaVentana(self)
+        ventanaContraReloj.ShowModal()
+        ventanaContraReloj.Destroy()
 
+'''
     def ModoContraReloj(self,i):
         self.Hide()
         ventanaContraReloj=PruebaVentana(self)
@@ -59,6 +108,4 @@ class VentanaModosDeJuego(wx.Dialog):
         ventanaModoLibre=PruebaVentana(self)
         ventanaModoLibre.ShowModal()
         ventanaModoLibre.Destroy()
-    
-    def OnClick(self,event):
-        print(u"Botón presionado: %s"%(event.EventObject.GetLabel()))
+'''
