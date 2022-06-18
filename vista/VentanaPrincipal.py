@@ -16,6 +16,7 @@ class VentanaPrincipal(wx.Frame):
         self.panel = wx.Panel(self)
         
         self.box1 = wx.StaticBox(self.panel, wx.ID_ANY, pos=(0,-7),size=(568, 400))
+        
         self.lbl1 = wx.StaticText(self.box1,-1, 'ENCONTRAR LOS PARES', pos =(132,60))
         self.btniniciarjuego = wx.Button(self.box1, label = "INICIAR EL JUEGO", size=(165, 60), pos=(190, 135))
         self.btnsalirjuego = wx.Button(self.box1, label = "SALIR DEL JUEGO", size=(165, 60), pos=(190, 220))

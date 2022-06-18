@@ -1,6 +1,5 @@
 import wx
 import random
-from wx import ALIGN_CENTER
 
 
 def GetLabel(event):

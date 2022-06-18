@@ -5,9 +5,7 @@ Created on 14-06-2022
 '''
 
 import wx
-import time
 import random
-from wx import ALIGN_CENTER
 
 
 def GetLabel(event):
@@ -29,62 +27,59 @@ columnas=5
 class VentanaJuego(wx.Dialog):
 
     def __init__ (self, parent):
-        wx.Dialog.__init__(self, parent, wx.NewId(), title = "Encontrar Los Pares", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(568, 400))
+        wx.Dialog.__init__(self, parent, wx.NewId(), title = "Encontrar Los Pares", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
         self.panel = wx.Panel(self)
+        self.counter = 300
         
-        self.box1 = wx.StaticBox(self.panel, wx.ID_ANY, pos=(0,-7),size=(568, 400))
-        
+        #Cambiar el color de fondo 
+        self.SetBackgroundColour('#B9D9D7')
+
         #Grilla
         
-        #Randomizador de la grilla 
-        self.vsizer=wx.BoxSizer(wx.VERTICAL)      
+        #Sizers
+        self.grillasizer=wx.BoxSizer(wx.VERTICAL)
+        self.relojsizer=wx.BoxSizer(wx.VERTICAL)
+        self.gridsizer=wx.GridSizer(filas,columnas,3,3)
+        
+        #Labels
+        fuente = wx.Font(24, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
+        self.lbl1 = wx.StaticText(self,-1, 'Inicio')
+        self.lbl1.SetFont(fuente)
+        
+        #Botones
+        self.btn1 = wx.Button(self, label='Comienza a Contar')
+        self.btn1.Bind(wx.EVT_BUTTON, self.InicioReloj)
+        
+        #Timer
+        self.timer = wx.Timer(self)
+        self.Bind(wx.EVT_TIMER, self.TerminoReloj, self.timer)
+        
+        #Randomizador de la grilla
         rdm=random.sample(range(1,20),10)
         rdm.extend(rdm)
         random.shuffle(rdm)
         print(rdm)
-       
-        self.gridsizer=wx.GridSizer(filas,columnas,3,3)
-
+        
+        #Agregando sizer
         for i in (rdm):
             imagefile=wx.Image("../Cards/back.png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
             btn=str(i)
             self.gridsizer.Add(wx.BitmapButton(self,name=btn,bitmap=imagefile, size= (imagefile.GetWidth(), imagefile.GetHeight() )),-1,wx.ALL|wx.ALIGN_CENTER,border=2)
-            self.Bind( wx.EVT_BUTTON,GetLabel)
+            self.Bind(wx.EVT_BUTTON,GetLabel)
+        
+        for obj in (self.lbl1, self.btn1, ):
+            self.relojsizer.Add(obj, 1, wx.EXPAND|wx.ALL, 2)
+            obj.SetInitialSize((0,0))
             
-        self.vsizer.Add(self.gridsizer,-1,wx.ALIGN_CENTER|wx.ALL, border=10)
-        self.SetSizer(self.vsizer)  
+        #Configuracion sizer
+        self.grillasizer.Add(self.gridsizer,-1,wx.ALIGN_CENTER|wx.ALL, border=10)
+        self.grillasizer.Add(self.relojsizer, -1, wx.EXPAND|wx.ALL, 10) 
+        self.SetSizer(self.grillasizer)
         
-
-        #Modificar color de fondo del StaticBox
-        self.box1.SetBackgroundColour('#B9D9D7')
-        self.panel.SetBackgroundColour('#B9D9D7')
-        
-        #Para que la ventana se abra en el centro de la pantalla
-        self.Centre(True)
-        
-        #Para que la ventana se maximize
+        #Maximizar la ventana
         self.Maximize(True)
         
-        #ContraReloj
-        self.counter = 300
-
-        fuente = wx.Font(24, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
-
-        self.lbl = wx.StaticText(self.box1,-1, 'Inicio')
-        self.lbl.SetFont(fuente)
-        
-        self.btn = wx.Button(self.box1, label='Comienza a Contar')
-        self.btn.Bind(wx.EVT_BUTTON, self.InicioReloj)
-
-        self.timer = wx.Timer(self)
-        self.Bind(wx.EVT_TIMER, self.TerminoReloj, self.timer)
-
-        sizer = wx.BoxSizer(wx.VERTICAL)
-        sizer.Add(self.lbl, 0, wx.ALL|wx.ALIGN_RIGHT, 10)
-        sizer.Add(self.btn, 0, wx.ALL|wx.ALIGN_RIGHT, 10)
-        self.panel.SetSizer(sizer)
-
         self.Show()
 
     def InicioReloj(self, e):
@@ -93,14 +88,14 @@ class VentanaJuego(wx.Dialog):
     def TerminoReloj(self, event):
         if self.counter == 0:
             self.timer.Stop()
-            self.lbl.SetLabel('El juego ha terminado')
+            self.lbl1.SetLabel('El juego ha terminado')
             return
         else:
             minutos = self.counter // 60
             segundos = self.counter - (minutos * 60)
             self.counter -= 1
 
-        self.lbl.SetLabel(f"{str(minutos)}:{str(segundos)}")
+        self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
 
 
-
+        
