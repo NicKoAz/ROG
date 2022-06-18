@@ -1,8 +1,3 @@
-'''
-Created on 18-06-2022
-
-@author: Nicolas Carreño
-'''
 import wx
 import time
 
