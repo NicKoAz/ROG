@@ -1,9 +1,9 @@
 import wx
 import random
-from wx import ALIGN_CENTER
 
 
-def GetLabel(event):
+
+def GetBitmap(event):
     boton=event.GetEventObject()#.GetName()
     nombreboton=event.GetEventObject().GetName()
     
@@ -40,7 +40,7 @@ class MyPanel(wx.Panel):
             self.gridsizer.Add(wx.BitmapButton(self,name=btn,bitmap=imagefile, size= (imagefile.GetWidth(), imagefile.GetHeight() )),-1,wx.ALL|wx.ALIGN_CENTER,border=2)     #era0envezde-1
             
            
-            self.Bind( wx.EVT_BUTTON,GetLabel)
+            self.Bind( wx.EVT_BUTTON,GetBitmap)
         #self.SetSizerAndFit(self.gridsizer)   
             #self.Centre()
         self.vsizer.Add(self.gridsizer,-1,wx.ALIGN_CENTER|wx.ALL, border=10)
