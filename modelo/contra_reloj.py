@@ -44,8 +44,6 @@ class ContraReloj(wx.Frame):
 
         self.lbl.SetLabel(f"{str(minutos)}:{str(segundos)}")
     
-
-
 if __name__ == '__main__':
     app = wx.App(False)
     frame = ContraReloj()

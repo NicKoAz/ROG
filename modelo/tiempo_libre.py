@@ -12,7 +12,7 @@ class ContraReloj(wx.Frame):
         font = wx.Font(24, wx.FONTFAMILY_ROMAN,
                        wx.FONTSTYLE_NORMAL,
                        wx.FONTWEIGHT_BOLD)
-
+        
         self.lbl = wx.StaticText(panel, label='Inicio')
         self.lbl.SetFont(font)
 
@@ -33,7 +33,7 @@ class ContraReloj(wx.Frame):
         self.timer.Start(1000)
 
     def update(self, event):
-        if self.counter == 10000000:
+        if self.counter == 1000000000:
             self.timer.Stop()
             self.lbl.SetLabel('El juego ha terminado')
             return
@@ -44,8 +44,6 @@ class ContraReloj(wx.Frame):
 
         self.lbl.SetLabel(f"{str(minutos)}:{str(segundos)}")
     
-
-
 if __name__ == '__main__':
     app = wx.App(False)
     frame = ContraReloj()
