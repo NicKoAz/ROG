@@ -18,10 +18,12 @@ def TestNombre(event):
     
 filas=4
 columnas=5
+
 #'''MyPanel: Clase  que contiene  a la grilla'''
 class MyPanel(wx.Panel):
     def __init__(self,parent):
         super(MyPanel,self).__init__(parent)
+        
 #'''Randomizador de la grilla'''  
         self.vsizer=wx.BoxSizer(wx.VERTICAL)      
         rdm=random.sample(range(1,20),10)
@@ -54,7 +56,7 @@ class MyPanel(wx.Panel):
 class MyFrame(wx.Frame):
     
     def __init__(self,parent,id):
-        wx.Frame.__init__(self,parent,id,"grilla",size=(700,600)) #size=(500,500))
+        wx.Frame.__init__(self,parent,id,"grilla",size=(700,600))
         self.Maximize(True)
         self.SetBackgroundColour('#B9D9D7')
         panel=MyPanel(self)
