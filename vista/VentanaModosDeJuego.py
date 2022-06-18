@@ -5,7 +5,7 @@ Created on 15-06-2022
 '''
 
 import wx
-from vista.PruebaVentana import PruebaVentana
+from vista.VentanaJuego import VentanaJuego
 
 class VentanaModosDeJuego(wx.Dialog):
 
@@ -54,7 +54,7 @@ class VentanaModosDeJuego(wx.Dialog):
         labelbotones=event.GetEventObject().GetLabel()
         print(labelbotones)
         self.Hide()
-        ventanaContraReloj=PruebaVentana(self)
+        ventanaContraReloj=VentanaJuego(self)
         ventanaContraReloj.ShowModal()
         ventanaContraReloj.Destroy()
 

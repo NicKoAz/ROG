@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 '''
 Created on 16-05-2022
 
@@ -12,7 +11,3 @@ if __name__ == "__main__":
     app = wx.App()
     VentanaPrincipal().Show()
     app.MainLoop()
-=======
-class Main():
-    pass
->>>>>>> refs/heads/Claudio
