@@ -54,14 +54,8 @@ class VentanaModosDeJuego(wx.Dialog):
         labelbotones=event.GetEventObject().GetLabel()
         print(labelbotones)
         self.Hide()
-<<<<<<< HEAD
+
         ventanaContraReloj=VentanaJuego(self)
         ventanaContraReloj.ShowModal()
         ventanaContraReloj.Destroy()
-=======
-        ventanaJuego=VentanaJuego(self)
-        ventanaJuego.ShowModal()
-        ventanaJuego.Destroy()
->>>>>>> refs/heads/Claudio
-
 
