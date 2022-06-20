@@ -66,9 +66,9 @@ class VentanaJuego(wx.Dialog):
             self.Bind(wx.EVT_BUTTON,GetLabel)
         
         #Configuracion sizer
-        self.grillasizer.Add(self.lbl1, 1, wx.ALIGN_RIGHT|wx.ALL, 5) 
-        self.grillasizer.Add(self.btn1, 1, wx.ALIGN_RIGHT|wx.ALL, 3)
-        self.grillasizer.Add(self.gridsizer, -1, wx.ALIGN_CENTER|wx.ALL, 10)
+        self.grillasizer.Add(self.lbl1, 0, wx.ALIGN_RIGHT|wx.ALL, border=45) 
+        self.grillasizer.Add(self.btn1, 0, wx.ALIGN_RIGHT|wx.ALL, border=5)
+        self.grillasizer.Add(self.gridsizer, 0, wx.ALIGN_CENTER|wx.ALL, border=-115)
         self.SetSizer(self.grillasizer)
         
         #Maximizar la ventana
