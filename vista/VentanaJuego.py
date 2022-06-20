@@ -27,23 +27,20 @@ columnas=5
 class VentanaJuego(wx.Dialog):
 
     def __init__ (self, parent):
-        wx.Dialog.__init__(self, parent, wx.NewId(), title = "Encontrar Los Pares", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
+        wx.Dialog.__init__(self, parent, wx.NewId(), title = "Memoriza", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
         self.panel = wx.Panel(self)
-        self.counter = 10
+        self.counter = 59
         
         #Cambiar el color de fondo 
         self.SetBackgroundColour('#B9D9D7')
-
-        #Grilla
         
         #Sizers
         self.grillasizer=wx.BoxSizer(wx.VERTICAL)
-        #self.relojsizer=wx.BoxSizer(wx.VERTICAL)
         self.gridsizer=wx.GridSizer(filas,columnas,3,3)
         
         #Labels
-        fuente = wx.Font(24, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
+        fuente = wx.Font(35, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
         self.lbl1 = wx.StaticText(self, label='Inicio')
         self.lbl1.SetFont(fuente)
         
@@ -68,28 +65,25 @@ class VentanaJuego(wx.Dialog):
             self.gridsizer.Add(wx.BitmapButton(self,name=btn,bitmap=imagefile, size= (imagefile.GetWidth(), imagefile.GetHeight() )),-1,wx.ALL|wx.ALIGN_CENTER,border=2)
             self.Bind(wx.EVT_BUTTON,GetLabel)
         
-        #for obj in (self.lbl1, self.btn1):
-            #self.relojsizer.Add(obj, 1, wx.EXPAND|wx.ALL, 2)
-            #obj.SetInitialSize((0,0))
-            
         #Configuracion sizer
         self.grillasizer.Add(self.lbl1, 1, wx.ALIGN_RIGHT|wx.ALL, 5) 
-        self.grillasizer.Add(self.btn1, 1, wx.ALIGN_RIGHT|wx.ALL, 5)
-        self.grillasizer.Add(self.gridsizer,-1,wx.ALIGN_CENTER|wx.ALL, border=10)
+        self.grillasizer.Add(self.btn1, 1, wx.ALIGN_RIGHT|wx.ALL, 3)
+        self.grillasizer.Add(self.gridsizer, -1, wx.ALIGN_CENTER|wx.ALL, 10)
         self.SetSizer(self.grillasizer)
         
         #Maximizar la ventana
         self.Maximize(True)
         
+        #Se muestra todo a la vez
         self.Show()
 
     def InicioReloj(self, e):
         self.timer.Start(1000)
 
     def TerminoReloj(self, e):
-        if self.counter == 0:
+        if self.counter == -1: #0
             self.timer.Stop()
-            self.lbl1.SetLabel('El juego ha terminado')
+            #self.lbl1.SetLabel('El juego ha terminado')
             return
         else:
             minutos = self.counter // 60
