@@ -1,8 +1,3 @@
-'''
-Created on 14-06-2022
-
-@author: carol
-'''
 import wx
 import random
 from modelo.CuentaPares import CuentaPares
