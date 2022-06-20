@@ -19,18 +19,6 @@ def GetLabel(event):
     juego.SetBoton(nombreboton)
     juego.SetButton(boton)
     
-    
-
-            
-           
-            
-            
-    
-        
-        
-        
-    
-    
 
     
 filas=4
