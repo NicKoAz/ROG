@@ -22,9 +22,11 @@ columnas=5
 
 class VentanaJuego(wx.Dialog):
 
-    def __init__ (self,parent,filas,columnas, tiempo):
+    def __init__ (self,parent,filas,columnas, tiempo,tipo):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Memoriza", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
+        
+        self.tipo=int(tipo)
         self.panel = wx.Panel(self)
         self.counter = int(tiempo)
         
@@ -53,8 +55,15 @@ class VentanaJuego(wx.Dialog):
         self.btn1.Bind(wx.EVT_BUTTON, self.InicioReloj)
         
         #Timer
-        self.timer = wx.Timer(self)
-        self.Bind(wx.EVT_TIMER, self.TerminoReloj, self.timer)
+        
+        if self.tipo==1:
+            self.timer = wx.Timer(self)
+            self.Bind(wx.EVT_TIMER, self.TerminoReloj, self.timer)
+            
+        elif self.tipo==2:
+            self.timer = wx.Timer(self)
+            self.Bind(wx.EVT_TIMER, self.Cronometro,self.timer)
+            
         
         #Randomizador de la grilla
         rdm=random.sample(range(1,20),self.par)
@@ -96,6 +105,17 @@ class VentanaJuego(wx.Dialog):
             self.counter -= 1
 
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
+        
+        
+    def Cronometro(self,e):
+        
+        minutos = self.counter // 60
+        
+        segundos = self.counter - (minutos * 60)
+        self.counter += 1
+
+        self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
+        
 
 
 
