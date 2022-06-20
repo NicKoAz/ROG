@@ -5,7 +5,7 @@ Created on 14-06-2022
 '''
 import wx
 import random
-
+from modelo.CuentaPares import CuentaPares
 
 def GetLabel(event):
     boton=event.GetEventObject()
@@ -15,10 +15,28 @@ def GetLabel(event):
 
     image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
     boton.SetBitmap(image)
+    
+    juego.SetBoton(nombreboton)
+    juego.SetButton(boton)
+    
+    
+
+            
+           
+            
+            
+    
+        
+        
+        
+    
+    
 
     
 filas=4
 columnas=5
+
+juego=CuentaPares()
 
 class VentanaJuego(wx.Dialog):
 
