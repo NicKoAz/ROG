@@ -54,7 +54,23 @@ class VentanaModosDeJuego(wx.Dialog):
         labelbotones=event.GetEventObject().GetLabel()
         print(labelbotones)
         self.Hide()
-        ventanaJuego=VentanaJuego(self)
+        if labelbotones=="CONTRARELOJ-FACIL":
+            ventanaJuego=VentanaJuego(self,4,4)
+            
+        elif labelbotones=="CONTRARELOJ-NORMAL":
+            ventanaJuego=VentanaJuego(self,4,5)
+        
+        elif labelbotones=="CONTRARELOJ-DIFICIL":
+            ventanaJuego=VentanaJuego(self,4,7)
+        
+        elif labelbotones=="MODO LIBRE-FACIL":
+            ventanaJuego=VentanaJuego(self,4,4)
+        elif labelbotones=="MODO LIBRE-NORMAL":
+            ventanaJuego=VentanaJuego(self,4,5)
+        elif labelbotones=="MODO LIBRE-DIFICIL":
+            ventanaJuego=VentanaJuego(self,4,7)
+        
+        
         ventanaJuego.ShowModal()
         ventanaJuego.Destroy()
 

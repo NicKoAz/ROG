@@ -32,6 +32,10 @@ class VentanaJuego(wx.Dialog):
         self.panel = wx.Panel(self)
         self.counter = 60
         
+        self.filas=int(filas)
+        self.columnas=int(columnas)
+        self.par=int((self.filas*self.columnas)/2)
+        
         #Cambiar el color de fondo 
         self.SetBackgroundColour('#B9D9D7')
 
@@ -56,7 +60,7 @@ class VentanaJuego(wx.Dialog):
         self.Bind(wx.EVT_TIMER, self.TerminoReloj, self.timer)
         
         #Randomizador de la grilla
-        rdm=random.sample(range(1,20),10)
+        rdm=random.sample(range(1,20),self.par)
         rdm.extend(rdm)
         random.shuffle(rdm)
         print(rdm)
