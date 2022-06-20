@@ -54,7 +54,6 @@ class VentanaModosDeJuego(wx.Dialog):
         labelbotones=event.GetEventObject().GetLabel()
         print(labelbotones)
         self.Hide()
-
         ventanaContraReloj=VentanaJuego(self)
         ventanaContraReloj.ShowModal()
         ventanaContraReloj.Destroy()

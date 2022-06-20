@@ -49,9 +49,9 @@ class VentanaPrincipal(wx.Frame):
         
     def InicioJuego(self,i):
         self.Hide()
-        ventanaMode=VentanaModosDeJuego(self)
-        ventanaMode.ShowModal()
-        ventanaMode.Destroy()
+        ventanaModos=VentanaModosDeJuego(self)
+        ventanaModos.ShowModal()
+        ventanaModos.Destroy()
     
     def FinDelJuego(self,i):
         VentanaPrincipal()

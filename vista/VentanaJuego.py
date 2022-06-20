@@ -6,6 +6,7 @@ Created on 19-06-2022
 
 import wx
 import random
+from vista.VentanaMensaje import VentanaMensaje
 
 
 def GetLabel(event):
@@ -30,7 +31,7 @@ class VentanaJuego(wx.Dialog):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Memoriza", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
         self.panel = wx.Panel(self)
-        self.counter = 59
+        self.counter = 3
         
         #Cambiar el color de fondo 
         self.SetBackgroundColour('#B9D9D7')
@@ -83,7 +84,9 @@ class VentanaJuego(wx.Dialog):
     def TerminoReloj(self, e):
         if self.counter == -1: #0
             self.timer.Stop()
-            #self.lbl1.SetLabel('El juego ha terminado')
+            self.Hide()
+            ventanaMensaje=VentanaMensaje(self)
+            ventanaMensaje.ShowModal()
             return
         else:
             minutos = self.counter // 60
