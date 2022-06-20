@@ -1,11 +1,3 @@
-'''
-Created on 20-06-2022
-
-@author: Nicolas Carreño
-'''
-import wx
-
-
 class CuentaPares():
     def __init__(self):
         self.pares=0
