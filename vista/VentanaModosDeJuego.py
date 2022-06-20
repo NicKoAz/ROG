@@ -58,10 +58,10 @@ class VentanaModosDeJuego(wx.Dialog):
             ventanaJuego=VentanaJuego(self,4,4,90,1)
             
         elif labelbotones=="CONTRARELOJ-NORMAL":
-            ventanaJuego=VentanaJuego(self,4,5,120,1)
+            ventanaJuego=VentanaJuego(self,4,5,150,1)
         
         elif labelbotones=="CONTRARELOJ-DIFICIL":
-            ventanaJuego=VentanaJuego(self,4,7,150,1)
+            ventanaJuego=VentanaJuego(self,4,7,120,1)
         
         elif labelbotones=="MODO LIBRE-FACIL":
             ventanaJuego=VentanaJuego(self,4,4,0,2)
