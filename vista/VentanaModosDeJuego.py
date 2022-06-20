@@ -1,9 +1,3 @@
-'''
-Created on 15-06-2022
-
-@author: carol
-'''
-
 import wx
 from vista.VentanaJuego import VentanaJuego
 
@@ -55,13 +49,13 @@ class VentanaModosDeJuego(wx.Dialog):
         print(labelbotones)
         self.Hide()
         if labelbotones=="CONTRARELOJ-FACIL":
-            ventanaJuego=VentanaJuego(self,4,4)
-            
+            ventanaJuego=VentanaJuego(self,4,4,60)
+                        
         elif labelbotones=="CONTRARELOJ-NORMAL":
-            ventanaJuego=VentanaJuego(self,4,5)
+            ventanaJuego=VentanaJuego(self,4,5,120)
         
         elif labelbotones=="CONTRARELOJ-DIFICIL":
-            ventanaJuego=VentanaJuego(self,4,7)
+            ventanaJuego=VentanaJuego(self,4,7,120)
         
         elif labelbotones=="MODO LIBRE-FACIL":
             ventanaJuego=VentanaJuego(self,4,4)
@@ -73,5 +67,3 @@ class VentanaModosDeJuego(wx.Dialog):
         
         ventanaJuego.ShowModal()
         ventanaJuego.Destroy()
-
-
