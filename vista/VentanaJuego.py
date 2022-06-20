@@ -30,7 +30,7 @@ class VentanaJuego(wx.Dialog):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Encontrar Los Pares", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
         self.panel = wx.Panel(self)
-        self.counter = 10
+        self.counter = 60
         
         #Cambiar el color de fondo 
         self.SetBackgroundColour('#B9D9D7')

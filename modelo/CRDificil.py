@@ -6,7 +6,7 @@ class ContraReloj(wx.Frame):
     
         wx.Frame.__init__(self, None, title='Contra-Reloj')
         panel = wx.Panel(self)
-        self.counter = 59
+        self.counter = 60
 
         font = wx.Font(24, wx.FONTFAMILY_ROMAN,
                        wx.FONTSTYLE_NORMAL,
