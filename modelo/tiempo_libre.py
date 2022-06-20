@@ -1,5 +1,4 @@
 import wx
-import time
 
 class ContraReloj(wx.Frame):
     

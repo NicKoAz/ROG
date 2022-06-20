@@ -17,8 +17,11 @@ columnas=5
 
 class VentanaJuego(wx.Dialog):
 
-    def __init__ (self,parent,filas,columnas, tiempo):
+    def __init__ (self,parent,filas,columnas, tiempo, tipo):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Encontrar Los Pares", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
+        
+        self.tipo = tipo
+        
         
         self.panel = wx.Panel(self)
         self.counter = int(tiempo)
@@ -45,7 +48,7 @@ class VentanaJuego(wx.Dialog):
         
         #Botones
         self.btn1 = wx.Button(self, label='Iniciar Cronometro')
-        self.btn1.Bind(wx.EVT_BUTTON, self.InicioReloj)
+        self.btn1.Bind(wx.EVT_BUTTON, self.InicioReloj)           
         
         #Timer
         self.timer = wx.Timer(self)
@@ -65,9 +68,11 @@ class VentanaJuego(wx.Dialog):
             self.Bind(wx.EVT_BUTTON,GetLabel)
             
         #Configuracion sizer
-        self.grillasizer.Add(self.lbl1, 0, wx.ALIGN_RIGHT|wx.ALL, border=45) 
-        self.grillasizer.Add(self.btn1, 0, wx.ALIGN_RIGHT|wx.ALL, border=5)
-        self.grillasizer.Add(self.gridsizer, 0, wx.ALIGN_CENTER|wx.ALL, border=-115)
+        self.grillasizer.Add(self.gridsizer, 0, wx.ALIGN_CENTER|wx.ALL, border=50)
+        self.grillasizer.Add(self.lbl1, 0, wx.CENTER|wx.ALL, border=100) 
+        self.grillasizer.Add(self.btn1, 0, wx.CENTER|wx.ALL, border=10)
+        
+        
         self.SetSizer(self.grillasizer)
         
         #Maximizar la ventana
@@ -76,21 +81,24 @@ class VentanaJuego(wx.Dialog):
         #Se muestra todo a la vez
         self.Show()
         
-
     def InicioReloj(self, e):
-        self.timer.Start(1000)
-
-    def TerminoReloj(self, e):
+        if self.tipo== 1:
+            self.timer.Start(1000)
+        elif self.tipo==2:
+            pass
+    
+            
+    def TerminoReloj(self, e):  
         if self.counter == 0:
             self.timer.Stop()
-            self.lbl1.SetLabel('El juego ha terminado')
+            self.lbl1.SetLabel('GAME OVER')
             return
         else:
             minutos = self.counter // 60
             segundos = self.counter - (minutos * 60)
             self.counter -= 1
+            
+        self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")      
 
-        self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
-
-
-        
+   
+            
