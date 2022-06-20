@@ -26,21 +26,27 @@ columnas=5
 
 class VentanaJuego(wx.Dialog):
 
-    def __init__ (self, parent):
+    def __init__ (self,parent,filas,columnas):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Encontrar Los Pares", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
         self.panel = wx.Panel(self)
         self.counter = 300
         
+        self.filas=int(filas)
+        self.columnas=int(columnas)
+        self.par=int((self.filas*self.columnas)/2)
         #Cambiar el color de fondo 
         self.SetBackgroundColour('#B9D9D7')
 
         #Grilla
         
         #Sizers
+        
         self.grillasizer=wx.BoxSizer(wx.VERTICAL)
         self.relojsizer=wx.BoxSizer(wx.VERTICAL)
-        self.gridsizer=wx.GridSizer(filas,columnas,3,3)
+        self.gridsizer=wx.GridSizer(self.filas,self.columnas,3,3)
+        
+        
         
         #Labels
         fuente = wx.Font(24, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
@@ -56,7 +62,7 @@ class VentanaJuego(wx.Dialog):
         self.Bind(wx.EVT_TIMER, self.TerminoReloj, self.timer)
         
         #Randomizador de la grilla
-        rdm=random.sample(range(1,20),10)
+        rdm=random.sample(range(1,20),self.par)
         rdm.extend(rdm)
         random.shuffle(rdm)
         print(rdm)
@@ -81,6 +87,8 @@ class VentanaJuego(wx.Dialog):
         self.Maximize(True)
         
         self.Show()
+        
+    
 
     def InicioReloj(self, e):
         self.timer.Start(1000)

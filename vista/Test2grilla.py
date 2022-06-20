@@ -4,11 +4,11 @@ import random
 
 
 def GetBitmap(event):
-    boton=event.GetEventObject()#.GetName()
+    boton=event.GetEventObject()
     nombreboton=event.GetEventObject().GetName()
     
     print(nombreboton)
-    #nombreboton.
+    
     image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
     boton.SetBitmap(image)
 
@@ -34,7 +34,7 @@ class MyPanel(wx.Panel):
         #hbox=wx.BoxSizer(wx.HORIZONTAL)
        
         self.gridsizer=wx.GridSizer(filas,columnas,3,3)
-        #for i in range(1,17):
+        
         for i in (rdm):
             #btn="btn"+ str(i)
             imagefile=wx.Image("../Cards/back.png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
