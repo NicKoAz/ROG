@@ -41,17 +41,20 @@ class VentanaJuego(wx.Dialog):
         #Sizers
         
         self.grillasizer=wx.BoxSizer(wx.VERTICAL)
-        self.gridsizer=wx.GridSizer(self.filas,self.columnas,3,3)
-        
-        
+        self.gridsizer=wx.GridSizer(self.filas, self.columnas,3, 3)
         
         #Labels
-        fuente = wx.Font(24, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
-        self.lbl1 = wx.StaticText(self,label='Inicio')
-        self.lbl1.SetFont(fuente)
+        self.lbl1 = wx.StaticText(self, label='0:00')
+        fuente1 = wx.Font(17, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
+        self.lbl1.SetFont(fuente1)
+        
+        self.lbltiempo = wx.StaticText(self, label='Tiempo Restante')
+        fuente2=self.lbltiempo.GetFont()
+        fuente2.SetPointSize(15)
+        self.lbltiempo.SetFont(fuente2)
         
         #Botones
-        self.btn1 = wx.Button(self, label='Iniciar Cronometro')
+        self.btn1 = wx.Button(self, wx.ID_ANY, label='Iniciar Partida', size=(150, 25))
         self.btn1.Bind(wx.EVT_BUTTON, self.InicioReloj)
         
         #Timer
@@ -79,9 +82,10 @@ class VentanaJuego(wx.Dialog):
             self.Bind(wx.EVT_BUTTON,GetLabel)
             
         #Configuracion sizer
-        self.grillasizer.Add(self.lbl1, 0, wx.ALIGN_RIGHT|wx.ALL, border=45) 
-        self.grillasizer.Add(self.btn1, 0, wx.ALIGN_RIGHT|wx.ALL, border=5)
-        self.grillasizer.Add(self.gridsizer, 0, wx.ALIGN_CENTER|wx.ALL, border=-115)
+        self.grillasizer.Add(self.gridsizer, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=10)
+        self.grillasizer.Add(self.lbltiempo,0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
+        self.grillasizer.Add(self.lbl1, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
+        self.grillasizer.Add(self.btn1, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
         self.SetSizer(self.grillasizer)
         
         #Maximizar la ventana
@@ -89,7 +93,6 @@ class VentanaJuego(wx.Dialog):
         
         #Se muestra todo a la vez
         self.Show()
-        
 
     def InicioReloj(self, e):
         self.timer.Start(1000)
@@ -105,7 +108,6 @@ class VentanaJuego(wx.Dialog):
             self.counter -= 1
 
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
-        
         
     def Cronometro(self,e):
         
