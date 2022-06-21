@@ -1,10 +1,8 @@
 '''
-Created on 07-06-2022
+Created on 21 jun 2022
 
-@author: carol
+@author: Nico
 '''
-
-
 import wx
 from vista.VentanaPrincipal import VentanaPrincipal
 
