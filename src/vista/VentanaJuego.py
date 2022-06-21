@@ -37,11 +37,9 @@ class VentanaJuego(wx.Dialog):
         
     def __init__ (self, parent, filas: int, columnas: int, tiempo: int, tipo: int):
         
-        """
+        '''
         
         Encargada de el constructor de la clase VentanaJuego.
-        
-        :param self: parametro por default.
         
         :param parent: objeto grafico del parametro Dialog.
         
@@ -54,7 +52,7 @@ class VentanaJuego(wx.Dialog):
         :param tipo: este sirve para elegir el tipo de tiempo.
         :type tipo: int
                 
-        """
+        '''
         
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Memoriza", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
