@@ -23,9 +23,7 @@ from vista.VentanaMensajeGanador import VentanaMensajeGanador
     
 '''
 
-class VentanaJuego(wx.Dialog):
-    
-    '''
+'''
     
     Encargada de mostrar el tablero y el tiempo del juego
 
@@ -33,8 +31,10 @@ class VentanaJuego(wx.Dialog):
     
     :type parent: wx.Dialog
     
-    '''
+'''
  
+class VentanaJuego(wx.Dialog):
+        
     def __init__ (self, parent, filas: int, columnas: int, tiempo: int, tipo: int):
         
         """
