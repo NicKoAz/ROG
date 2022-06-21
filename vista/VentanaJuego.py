@@ -5,16 +5,10 @@ Created on 21 jun 2022
 '''
 import wx
 import random
-from modelo.CuentaPares import CuentaPares
 import time
 from vista.VentanaMensajePerdedor import VentanaMensajePerdedor
 from vista.VentanaMensajeGanador import VentanaMensajeGanador
 
-
-filas=4
-columnas=5
-
-juego=CuentaPares()
 
 class VentanaJuego(wx.Dialog):
 
@@ -126,7 +120,6 @@ class VentanaJuego(wx.Dialog):
         
         boton=event.GetEventObject()
         nombreboton=event.GetEventObject().GetName()
-        #print(nombreboton)
 
         image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
         boton.SetBitmap(image)
@@ -134,7 +127,6 @@ class VentanaJuego(wx.Dialog):
         if self.clicks==1:
             self.carta=boton
             self.nCarta=nombreboton
-            #print ("primera carta")
             
             self.carta.Bind(wx.EVT_BUTTON,self.CartasTemp)
             
@@ -145,12 +137,10 @@ class VentanaJuego(wx.Dialog):
             print("segundacarta")
             if nombreboton == self.nCarta:
                 time.sleep(0)
-                
                 boton.Disable()
                 self.carta.Disable()
                 boton.SetBitmapDisabled(image)
                 self.carta.SetBitmapDisabled(image)
-                #print("Son pares")
                 self.contPares+=1
                 self.clicks=0
             elif nombreboton != self.nCarta:
@@ -165,7 +155,6 @@ class VentanaJuego(wx.Dialog):
             self.carta2.Bind(wx.EVT_BUTTON,self.ContarCartas)
             self.carta=boton
             self.nCarta=nombreboton
-            #print ("primera carta")
             self.clicks=1
         
         if self.contPares==self.par:
