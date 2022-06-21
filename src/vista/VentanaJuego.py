@@ -11,9 +11,6 @@ from vista.VentanaMensajePerdedor import VentanaMensajePerdedor
 from vista.VentanaMensajeGanador import VentanaMensajeGanador
 
 
-#filas=4
-#columnas=5
-
 juego=CuentaPares()
 
 '''
@@ -116,7 +113,7 @@ class VentanaJuego(wx.Dialog):
 
     def TerminoReloj(self, e):
         '''
-        Encargada de 
+        Encargada de ir desminuyendo el contador y posteriormente mostrarlo en pantalla
         '''
         if self.counter == -1:
             self.timer.Stop()
@@ -133,7 +130,7 @@ class VentanaJuego(wx.Dialog):
         
     def Cronometro(self,e):
         '''
-        Encargada de 
+        Encargada de ir aumentando el contador y posteriormente mostrarlo en pantalla
         '''
         minutos = self.counter // 60
         segundos = self.counter - (minutos * 60)
