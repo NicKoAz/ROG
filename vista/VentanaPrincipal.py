@@ -55,4 +55,3 @@ class VentanaPrincipal(wx.Frame):
     def FinDelJuego(self,i):
         VentanaPrincipal()
         self.Destroy()
-    

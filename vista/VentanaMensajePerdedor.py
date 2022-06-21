@@ -3,6 +3,7 @@ Created on 20-06-2022
 
 @author: carol
 '''
+
 import wx
 
 class VentanaMensajePerdedor(wx.Dialog):
@@ -34,5 +35,3 @@ class VentanaMensajePerdedor(wx.Dialog):
     def FinDePartida(self, i):
         VentanaMensajePerdedor(self)
         self.Destroy()
-            
-        
