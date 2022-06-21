@@ -26,22 +26,11 @@ class VentanaModosDeJuego(wx.Dialog):
     Clase encargada de mostrar la ventana de dialogo de los modos de juego
 
     :param parent: Objeto grafico padre del Dialog
-    
     :type parent: wx.Dialog
-    
     '''
 
     def __init__ (self, parent):
         
-        '''
-        
-        Constructor de la clase VentanaModosDeJuego
-        
-        :param self: parametro por default
-        
-        :param parent: Objeto grafico padre del Dialog
-        
-        '''
         
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Modos De Juego", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(568, 400))
         
@@ -86,12 +75,8 @@ class VentanaModosDeJuego(wx.Dialog):
         
         Funcion encargada de guardar el nombre del boton en el que se hizo click y abrir la ventana de juego
         
-        :param self: parametro por default
-        
         :param event: inicializa el evento GetLabel
-        
         :type event: wx.EVT
-        
         '''
         
         labelbotones=event.GetEventObject().GetLabel()

@@ -27,20 +27,11 @@ class VentanaPrincipal(wx.Frame):
     Clase encargada de mostrar la ventana principal del juego
     
     :param parent: Objeto grafico padre del Frame
-    
     :type parent: wx.frame
-    
     '''
 
     def __init__(self):
         
-        '''
-        
-        Este es el constructor de la clase VentanaPrincipal
-        
-        :param self: parametro por default
-        
-        '''
         
         wx.Frame.__init__(self, None, title="Encontrar Los Pares", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(568, 400))
         

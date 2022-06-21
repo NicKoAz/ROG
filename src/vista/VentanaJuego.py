@@ -136,7 +136,6 @@ class VentanaJuego(wx.Dialog):
         Encargada de ir aumentando el contador y posteriormente mostrarlo en pantalla.
         
         :param event: inicializa un evento de wx.Timer.
-        
         :type event: wx.EVT_Timer
         """
         

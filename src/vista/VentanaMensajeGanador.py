@@ -25,23 +25,12 @@ class VentanaMensajeGanador(wx.Dialog):
     Clase encargada de mostrar la ventana de dialogo del mensaje perdedor
 
     :param parent: Objeto grafico padre del Dialog
-    
     :type parent: wx.Dialog
-    
     '''
 
 
     def __init__ (self, parent):
                 
-        '''
-        
-        Constructor de la clase VentanaMesajePerdedor
-        
-        :param self: Parametro por default
-        
-        :param parent: Objeto grafico padre del Dialog
-        
-        '''
         
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Mensaje", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(600, 200))
         
@@ -72,10 +61,7 @@ class VentanaMensajeGanador(wx.Dialog):
         
         Funcion encargada de cerrar la VentanaMensajeGanador
         
-        :param self: Parametro por default
-        
         :param i: Inicializa un evento
-        
         '''
         
         VentanaMensajeGanador(self)
