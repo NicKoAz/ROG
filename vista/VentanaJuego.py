@@ -6,14 +6,12 @@ Created on 19-06-2022
 
 import wx
 import random
-from vista.VentanaMensajeOne import VentanaMensajeOne
+from vista.VentanaMensajeGanador import VentanaMensajeGanador
 
 
 def GetLabel(event):
     boton=event.GetEventObject()
     nombreboton=event.GetEventObject().GetName()
-    
-    print(nombreboton)
 
     image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
     boton.SetBitmap(image)
@@ -49,8 +47,8 @@ class VentanaJuego(wx.Dialog):
         self.lbltiempo.SetFont(fuente2)
         
         #Botones
-        #self.btn1 = wx.Button(self, wx.ID_ANY, label='Iniciar Partida', size=(150, 25))
-        #self.btn1.Bind(wx.EVT_BUTTON, self.InicioReloj)
+        self.btn1 = wx.Button(self, wx.ID_ANY, label='Iniciar Partida', size=(150, 25))
+        self.btn1.Bind(wx.EVT_BUTTON, self.InicioReloj)
         
         #Timer
         
@@ -79,7 +77,7 @@ class VentanaJuego(wx.Dialog):
         self.grillasizer.Add(self.gridsizer, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=10)
         self.grillasizer.Add(self.lbltiempo,0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
         self.grillasizer.Add(self.lbl1, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
-        #self.grillasizer.Add(self.btn1, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
+        self.grillasizer.Add(self.btn1, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
         self.SetSizer(self.grillasizer)
         
         #Maximizar la ventana
@@ -89,14 +87,13 @@ class VentanaJuego(wx.Dialog):
         self.Show()
 
     def InicioReloj(self, e=None):
-        if not self.timer.IsRunning():
-            self.timer.Start(1000)
+        self.timer.Start(1000)
 
     def TerminoReloj(self, e):
         if self.counter == -1: #0
             self.timer.Stop()
             self.Hide()
-            ventanaMensaje=VentanaMensajeOne(self)
+            ventanaMensaje=VentanaMensajeGanador(self)
             ventanaMensaje.ShowModal()
             return
         else:

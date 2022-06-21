@@ -5,7 +5,7 @@ Created on 20-06-2022
 '''
 import wx
 
-class VentanaMensajeOne(wx.Dialog):
+class VentanaMensajePerdedor(wx.Dialog):
 
     def __init__ (self, parent):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Mensaje", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(600, 200))
@@ -13,7 +13,7 @@ class VentanaMensajeOne(wx.Dialog):
         self.panel = wx.Panel(self)
         
         self.box1 = wx.StaticBox(self.panel, wx.ID_ANY, pos=(0,-7),size=(600, 200))
-        self.lbl1 = wx.StaticText(self.box1, -1, label='Se te ha acabado el Tiempo :(', pos =(120,50))
+        self.lbl1 = wx.StaticText(self.box1, -1, label='Lo siento, no encontraste todos los pares :(', pos =(40,50))
         
         self.btnsalir = wx.Button(self.box1, label = 'Salir', size=(100, 25), pos=(245, 100))
         
@@ -32,7 +32,7 @@ class VentanaMensajeOne(wx.Dialog):
         self.Centre(True)
         
     def FinDePartida(self, i):
-        VentanaMensajeOne(self)
+        VentanaMensajePerdedor(self)
         self.Destroy()
             
         
