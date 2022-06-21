@@ -24,6 +24,10 @@ class VentanaModosDeJuego(wx.Dialog):
     '''
     
     Clase encargada de mostrar la ventana de dialogo de los modos de juego
+
+    :param parent: Objeto grafico padre del Dialog
+    
+    :type parent: wx.Dialog
     
     '''
 
@@ -76,7 +80,7 @@ class VentanaModosDeJuego(wx.Dialog):
         #Para que la ventana se abra en el centro de la pantalla
         self.Centre(True)
         
-    def OnClick(self,event):
+    def OnClick(self, event):
         
         '''
         
@@ -85,6 +89,8 @@ class VentanaModosDeJuego(wx.Dialog):
         :param self: parametro por default
         
         :param event: inicializa un evento
+        
+        :type event: wx.EVT
         
         '''
         

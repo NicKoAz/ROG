@@ -26,6 +26,10 @@ class VentanaPrincipal(wx.Frame):
     
     Clase encargada de mostrar la ventana principal del juego
     
+    :param parent: Objeto grafico padre del Frame
+    
+    :type parent: wx.frame
+    
     '''
 
     def __init__(self):

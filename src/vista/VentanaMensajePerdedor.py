@@ -23,6 +23,10 @@ class VentanaMensajePerdedor(wx.Dialog):
     '''
     
     Clase encargada de mostrar la ventana de dialogo del mensaje perdedor
+
+    :param parent: Objeto grafico padre del Dialog
+    
+    :type parent: wx.Dialog
     
     '''
 
