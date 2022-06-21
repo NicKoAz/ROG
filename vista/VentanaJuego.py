@@ -117,6 +117,9 @@ class VentanaJuego(wx.Dialog):
         self.counter += 1
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
         
+    def CartasTemp(self,event):
+        pass
+        
     def ContarCartas(self,event):
         self.InicioReloj()
         self.clicks +=1
@@ -132,6 +135,8 @@ class VentanaJuego(wx.Dialog):
             self.carta=boton
             self.nCarta=nombreboton
             #print ("primera carta")
+            
+            self.carta.Bind(wx.EVT_BUTTON,self.CartasTemp)
             
         elif self.clicks==2:
             
@@ -151,10 +156,13 @@ class VentanaJuego(wx.Dialog):
             elif nombreboton != self.nCarta:
                 self.carta2=boton
                 self.nCarta2=nombreboton
+                self.carta2.Bind(wx.EVT_BUTTON,self.CartasTemp)
         elif self.clicks==3:
             image=wx.Image("../Cards/back.png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
             self.carta.SetBitmap(image)
+            self.carta.Bind(wx.EVT_BUTTON,self.ContarCartas)
             self.carta2.SetBitmap(image)
+            self.carta2.Bind(wx.EVT_BUTTON,self.ContarCartas)
             self.carta=boton
             self.nCarta=nombreboton
             #print ("primera carta")
