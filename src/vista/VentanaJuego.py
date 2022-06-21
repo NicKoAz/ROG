@@ -21,12 +21,18 @@ from vista.VentanaMensajeGanador import VentanaMensajeGanador
 
 class VentanaJuego(wx.Dialog):
     '''
-    Encargada de 
+    Encargada de mostrar el tablero y el tiempo de juego,
     '''
 
     def __init__ (self,parent,filas,columnas, tiempo,tipo):
         '''
-        Encargada de 
+        Es el constructor de la clase juego.
+        :param event: inicializa un evento.
+        :param parent: objeto grafico del parametro frame.
+        :param filas: insertar numero de filas de la grilla.
+        :param columnas: insertar numero de columnas de la grilla.
+        :param tiempo: ingresa el tiempo segun el nivel que elija el usuario.
+        :param tipo: este sirve para elejir el tipo de tiempo.
         '''
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Memoriza", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
@@ -81,7 +87,6 @@ class VentanaJuego(wx.Dialog):
         rdm=random.sample(range(1,20),self.par)
         rdm.extend(rdm)
         random.shuffle(rdm)
-        #print(rdm)
         
         #Agregando sizer
         for i in (rdm):
@@ -102,16 +107,18 @@ class VentanaJuego(wx.Dialog):
         #Se muestra todo a la vez
         self.Show()
 
-    def InicioReloj(self, e=None):
+    def InicioReloj(self, event=None):
         '''
-        Encargada de 
+        Encargada de inicializar el tiempo una vez se aprete la primera carta.
+        :param event: inicializa un evento en None.
         '''
         if not self.timer.IsRunning():
             self.timer.Start(1000)
 
-    def TerminoReloj(self, e):
+    def TerminoReloj(self, event):
         '''
         Encargada de ir desminuyendo el contador y posteriormente mostrarlo en pantalla.
+        :param event: inicializa un evento.
         '''
         if self.counter == -1:
             self.timer.Stop()
@@ -126,31 +133,37 @@ class VentanaJuego(wx.Dialog):
 
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
         
-    def Cronometro(self,e):
+    def Cronometro(self, event):
         '''
         Encargada de ir aumentando el contador y posteriormente mostrarlo en pantalla.
+        :param event: inicializa un evento.
         '''
         minutos = self.counter // 60
         segundos = self.counter - (minutos * 60)
         self.counter += 1
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
         
-    def CartasTemp(self,event):
+    def CartasTemp(self, event):
         '''
-        Encargada de que no se bugueen las cartas.
+        Funcion temporal encargada de bloquear que la primera carta no se pueda hacer click dos veces y contar como par.
+        
+        :param event: inicializa un evento.
+        
         '''
         pass
         
     def ContarCartas(self,event):
         '''
-        Encargada de ContarCartas e ir aumentando en 1.
+        Funcion encargada de verificar si son pares o no, en caso de que sean añadir un contador; ademas se encarga de que la carta se de vuelta una vez se haga click.
+        
+        :param event: inicializa un evento.
+        
         '''
         self.InicioReloj()
         self.clicks +=1
         
         boton=event.GetEventObject()
         nombreboton=event.GetEventObject().GetName()
-        #print(nombreboton)
 
         image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
         boton.SetBitmap(image)
@@ -158,7 +171,6 @@ class VentanaJuego(wx.Dialog):
         if self.clicks==1:
             self.carta=boton
             self.nCarta=nombreboton
-            #print ("primera carta")
             
             self.carta.Bind(wx.EVT_BUTTON,self.CartasTemp)
             
@@ -174,7 +186,6 @@ class VentanaJuego(wx.Dialog):
                 self.carta.Disable()
                 boton.SetBitmapDisabled(image)
                 self.carta.SetBitmapDisabled(image)
-                #print("Son pares")
                 self.contPares+=1
                 self.clicks=0
             elif nombreboton != self.nCarta:
@@ -189,7 +200,6 @@ class VentanaJuego(wx.Dialog):
             self.carta2.Bind(wx.EVT_BUTTON,self.ContarCartas)
             self.carta=boton
             self.nCarta=nombreboton
-            #print ("primera carta")
             self.clicks=1
         
         if self.contPares==self.par:
