@@ -122,7 +122,6 @@ class VentanaJuego(wx.Dialog):
         
         boton=event.GetEventObject()
         nombreboton=event.GetEventObject().GetName()
-        #print(nombreboton)
 
         image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
         boton.SetBitmap(image)
@@ -130,7 +129,6 @@ class VentanaJuego(wx.Dialog):
         if self.clicks==1:
             self.carta=boton
             self.nCarta=nombreboton
-            #print ("primera carta")
             
             self.carta.Bind(wx.EVT_BUTTON,self.CartasTemp)
             
@@ -161,7 +159,6 @@ class VentanaJuego(wx.Dialog):
             self.carta2.Bind(wx.EVT_BUTTON,self.ContarCartas)
             self.carta=boton
             self.nCarta=nombreboton
-            #print ("primera carta")
             self.clicks=1
         
         if self.contPares==self.par:
