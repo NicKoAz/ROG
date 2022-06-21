@@ -89,10 +89,10 @@ class VentanaJuego(wx.Dialog):
         self.Show()
 
     def InicioReloj(self, event):
-        posicionpieza = (event.self.filas, event.self.columnas)
+        posicionpieza = (self.filas, self.columnas)
         if (not self.gridsizer [posicionpieza]):
             return
-        if not self.timer.IsRunning():
+        if self.timer.IsRunning():
             self.timer.Start(1000)
 
     def TerminoReloj(self, event):
