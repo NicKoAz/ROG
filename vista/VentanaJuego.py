@@ -100,8 +100,9 @@ class VentanaJuego(wx.Dialog):
         #Se muestra todo a la vez
         self.Show()
 
-    def InicioReloj(self, e):
-        self.timer.Start(1000)
+    def InicioReloj(self, event=None):
+        if not self.timer.IsRunning():
+            self.timer.Start(1000)
 
     def TerminoReloj(self, e):
         if self.counter == 0:
@@ -126,6 +127,7 @@ class VentanaJuego(wx.Dialog):
         
         
     def ContarCartas(self,event):
+        self.InicioReloj()
         self.clicks +=1
         
         boton=event.GetEventObject()
