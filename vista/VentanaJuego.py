@@ -7,13 +7,10 @@ import wx
 import random
 from modelo.CuentaPares import CuentaPares
 import time
-from vista.VentanaMensaje import VentanaMensaje
+from vista.VentanaMensajePerdedor import VentanaMensajePerdedor
+from vista.VentanaMensajeGanador import VentanaMensajeGanador
 
 
-
-    
-
-    
 filas=4
 columnas=5
 
@@ -75,7 +72,7 @@ class VentanaJuego(wx.Dialog):
         rdm=random.sample(range(1,20),self.par)
         rdm.extend(rdm)
         random.shuffle(rdm)
-        print(rdm)
+        #print(rdm)
         
         #Agregando sizer
         for i in (rdm):
@@ -96,7 +93,7 @@ class VentanaJuego(wx.Dialog):
         #Se muestra todo a la vez
         self.Show()
 
-    def InicioReloj(self, event=None):
+    def InicioReloj(self, e=None):
         if not self.timer.IsRunning():
             self.timer.Start(1000)
 
@@ -104,7 +101,7 @@ class VentanaJuego(wx.Dialog):
         if self.counter == -1:
             self.timer.Stop()
             self.Hide()
-            ventanaMensaje=VentanaMensaje(self)
+            ventanaMensaje=VentanaMensajePerdedor(self)
             ventanaMensaje.ShowModal()
             return
         else:
@@ -126,21 +123,15 @@ class VentanaJuego(wx.Dialog):
         
         boton=event.GetEventObject()
         nombreboton=event.GetEventObject().GetName()
-        print(nombreboton)
+        #print(nombreboton)
 
         image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
         boton.SetBitmap(image)
         
-        
         if self.clicks==1:
             self.carta=boton
             self.nCarta=nombreboton
-            
-
-            
-             
-            print ("primera carta")
-            
+            #print ("primera carta")
             
         elif self.clicks==2:
             
@@ -154,7 +145,7 @@ class VentanaJuego(wx.Dialog):
                 self.carta.Disable()
                 boton.SetBitmapDisabled(image)
                 self.carta.SetBitmapDisabled(image)
-                print("Son pares")
+                #print("Son pares")
                 self.contPares+=1
                 self.clicks=0
             elif nombreboton != self.nCarta:
@@ -166,22 +157,12 @@ class VentanaJuego(wx.Dialog):
             self.carta2.SetBitmap(image)
             self.carta=boton
             self.nCarta=nombreboton
-            print ("primera carta")
+            #print ("primera carta")
             self.clicks=1
         
-            
-            
         if self.contPares==self.par:
-            print("!!!!!!!!!WHHHHOOOAAAADUDEEE")   
-        
-                
-        
-        
-        
-        
-        
-
-
-
-
-        
+            self.timer.Stop()
+            self.Hide()
+            ventanaMensaje=VentanaMensajeGanador(self)
+            ventanaMensaje.ShowModal()
+            return 
