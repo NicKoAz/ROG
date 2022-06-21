@@ -113,7 +113,7 @@ class VentanaJuego(wx.Dialog):
 
     def TerminoReloj(self, e):
         '''
-        Encargada de ir desminuyendo el contador y posteriormente mostrarlo en pantalla
+        Encargada de ir desminuyendo el contador y posteriormente mostrarlo en pantalla.
         '''
         if self.counter == -1:
             self.timer.Stop()
@@ -130,7 +130,7 @@ class VentanaJuego(wx.Dialog):
         
     def Cronometro(self,e):
         '''
-        Encargada de ir aumentando el contador y posteriormente mostrarlo en pantalla
+        Encargada de ir aumentando el contador y posteriormente mostrarlo en pantalla.
         '''
         minutos = self.counter // 60
         segundos = self.counter - (minutos * 60)
@@ -139,13 +139,13 @@ class VentanaJuego(wx.Dialog):
         
     def CartasTemp(self,event):
         '''
-        Encargada de 
+        Encargada de que no se bugueen las cartas.
         '''
         pass
         
     def ContarCartas(self,event):
         '''
-        Encargada de 
+        Encargada de ContarCartas e ir aumentando en 1.
         '''
         self.InicioReloj()
         self.clicks +=1
