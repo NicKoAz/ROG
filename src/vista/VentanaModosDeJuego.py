@@ -88,7 +88,7 @@ class VentanaModosDeJuego(wx.Dialog):
         
         :param self: parametro por default
         
-        :param event: inicializa un evento
+        :param event: inicializa el evento GetLabel
         
         :type event: wx.EVT
         
