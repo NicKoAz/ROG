@@ -75,7 +75,6 @@ class VentanaPrincipal(wx.Frame):
         
         Funcion encargada de mostrar en pantalla la VentanaModosDeJuego
         
-        :param self: parametro por default
         
         :param i: inicializa un evento
         
@@ -91,8 +90,6 @@ class VentanaPrincipal(wx.Frame):
         '''
         
         Funcion encargada de cerrar la VentanaPrincipal
-        
-        :param self: parametro por default
         
         :param i: inicializa un evento
         
