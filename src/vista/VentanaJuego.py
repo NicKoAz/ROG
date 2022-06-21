@@ -26,6 +26,7 @@ class VentanaJuego(wx.Dialog):
         
     def __init__ (self, parent, filas: int, columnas: int, tiempo: int, tipo: int):
         
+<<<<<<< HEAD
         '''
         
         Encargada de el constructor de la clase VentanaJuego.
@@ -45,6 +46,8 @@ class VentanaJuego(wx.Dialog):
         :type tipo: int
                 
         '''
+=======
+>>>>>>> branch 'sphinx' of https://github.com/NicKoAz/ROG
         
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Memoriza", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
