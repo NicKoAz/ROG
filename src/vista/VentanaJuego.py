@@ -4,36 +4,25 @@ Created on 21 jun 2022
 @author: Nico
 '''
 
+"""
+Clase VentanaJuego
+##################################
+Encargada de mostrar la interfaz del tablero
+"""
+
 import wx
 import random
 import time
 from vista.VentanaMensajePerdedor import VentanaMensajePerdedor
 from vista.VentanaMensajeGanador import VentanaMensajeGanador
 
-
-'''
-
-    Esto es un documento
-    
-'''
-
-'''
-
-    Esto es una clase
-    
-'''
-
-'''
-    
-    Encargada de mostrar el tablero y el tiempo del juego
-
+ 
+class VentanaJuego(wx.Dialog):
+    """
     :param parent: Objeto grafico padre del Dialog
     
     :type parent: wx.Dialog
-    
-'''
- 
-class VentanaJuego(wx.Dialog):
+    """
         
     def __init__ (self, parent, filas: int, columnas: int, tiempo: int, tipo: int):
         
@@ -45,10 +34,13 @@ class VentanaJuego(wx.Dialog):
         
         :param filas: insertar numero de filas de la grilla.
         :type filas: int
+        
         :param columnas: insertar numero de columnas de la grilla.
         :type columnas: int
+        
         :param tiempo: ingresa el tiempo.
         :type tiempo: int
+        
         :param tipo: este sirve para elegir el tipo de tiempo.
         :type tipo: int
                 
@@ -128,29 +120,23 @@ class VentanaJuego(wx.Dialog):
 
     def InicioReloj(self, event=None):
         
-        '''
-        
+        """
         Encargada de inicializar el tiempo una vez se aprete la primera carta.
         
         :param event: inicializa un evento en None de wx.Time.
-
         :type event: wx.EVT_Timer
-        
-        '''
+        """
         if not self.timer.IsRunning():
             self.timer.Start(1000)
 
     def TerminoReloj(self, event):
         
-        '''
-        
+        """
         Encargada de ir desminuyendo el contador y posteriormente mostrarlo en pantalla.
         
         :param event: inicializa un evento de wx.Timer.
-        
         :type event: wx.EVT_Timer
-        
-        '''
+        """
         if self.counter == -1:
             self.timer.Stop()
             self.Hide()
@@ -166,15 +152,13 @@ class VentanaJuego(wx.Dialog):
         
     def Cronometro(self, event):
         
-        '''
-        
+        """
         Encargada de ir aumentando el contador y posteriormente mostrarlo en pantalla.
         
         :param event: inicializa un evento de wx.Timer.
         
         :type event: wx.EVT_Timer
-        
-        '''
+        """
         
         minutos = self.counter // 60
         segundos = self.counter - (minutos * 60)
@@ -183,27 +167,23 @@ class VentanaJuego(wx.Dialog):
         
     def CartasTemp(self, event):
         
-        '''
-        
+        """
         Funcion temporal encargada de bloquear que la primera carta no se pueda hacer click dos veces y contar como par.
         
         :param event: inicializa un evento.
         
-        '''
+        """
         
         pass
         
     def ContarCartas(self, event):
         
-        '''
-        
+        """
         Funcion encargada de verificar si son pares o no, en caso de que sean añadir un contador; ademas se encarga de que la carta se de vuelta una vez se haga click.
         
         :param event: inicializa el evento GetName.
-        
         :type event: wx.EVT
-        
-        '''
+        """
         
         self.InicioReloj()
         self.clicks +=1
