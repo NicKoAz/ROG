@@ -42,13 +42,18 @@ class VentanaJuego(wx.Dialog):
         Encargada de el constructor de la clase VentanaJuego.
         
         :param self: parametro por default.
+        
         :param parent: objeto grafico del parametro Dialog.
+        
         :param filas: insertar numero de filas de la grilla.
         :type filas: int
+        
         :param columnas: insertar numero de columnas de la grilla.
         :type columnas: int
+        
         :param tiempo: ingresa el tiempo.
         :type tiempo: int
+        
         :param tipo: este sirve para elegir el tipo de tiempo.
         :type tipo: int
                 
