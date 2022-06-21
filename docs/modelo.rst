@@ -4,6 +4,14 @@ modelo package
 Submodules
 ----------
 
+modelo.CuentaPares module
+-------------------------
+
+.. automodule:: modelo.CuentaPares
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 modelo.Modelo module
 --------------------
 

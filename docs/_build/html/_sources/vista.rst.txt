@@ -12,18 +12,34 @@ vista.Main module
    :undoc-members:
    :show-inheritance:
 
-vista.VentanaDificultad module
-------------------------------
+vista.VentanaJuego module
+-------------------------
 
-.. automodule:: vista.VentanaDificultad
+.. automodule:: vista.VentanaJuego
    :members:
    :undoc-members:
    :show-inheritance:
 
-vista.VentanaModoJuego module
------------------------------
+vista.VentanaMensajeGanador module
+----------------------------------
 
-.. automodule:: vista.VentanaModoJuego
+.. automodule:: vista.VentanaMensajeGanador
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+vista.VentanaMensajePerdedor module
+-----------------------------------
+
+.. automodule:: vista.VentanaMensajePerdedor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+vista.VentanaModosDeJuego module
+--------------------------------
+
+.. automodule:: vista.VentanaModosDeJuego
    :members:
    :undoc-members:
    :show-inheritance:
