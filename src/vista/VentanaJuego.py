@@ -35,7 +35,7 @@ class VentanaJuego(wx.Dialog):
     
     '''
  
-    def __init__ (self, parent, filas, columnas, tiempo, tipo):
+    def __init__ (self, parent, filas: int, columnas: int, tiempo: int, tipo: int):
         
         '''
         
@@ -47,13 +47,10 @@ class VentanaJuego(wx.Dialog):
         
         :param filas: insertar numero de filas de la grilla.
         :type filas: int
-        
         :param columnas: insertar numero de columnas de la grilla.
         :type columnas: int
-        
         :param tiempo: ingresa el tiempo.
         :type tiempo: int
-        
         :param tipo: este sirve para elegir el tipo de tiempo.
         :type tipo: int
                 
