@@ -4,13 +4,13 @@ Created on 21 jun 2022
 @author: Nico
 '''
 
-import wx
-
 '''
 
     Esto es un documento
     
 '''
+
+import wx
 
 '''
 

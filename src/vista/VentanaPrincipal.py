@@ -4,15 +4,13 @@ Created on 21 jun 2022
 @author: Nico
 '''
 
-import wx
-from vista.VentanaModosDeJuego import VentanaModosDeJuego
-
-
 '''
 
     Esto es un documento
     
 '''
+import wx
+from vista.VentanaModosDeJuego import VentanaModosDeJuego
 
 '''
 
