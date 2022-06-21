@@ -1,3 +1,9 @@
+'''
+Created on 21-06-2022
+
+@author: carol
+'''
+
 class CuentaPares():
     def __init__(self):
         self.pares=0
@@ -8,11 +14,5 @@ class CuentaPares():
     def GetPares(self):
         return(self.pares)
     
-  
-    
     def ResetAll(self):
         self.pares=0
-        
-               
-        
-    
