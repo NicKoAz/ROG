@@ -25,27 +25,7 @@ class VentanaJuego(wx.Dialog):
     """
         
     def __init__ (self, parent, filas: int, columnas: int, tiempo: int, tipo: int):
-        
-        '''
-        
-        Encargada de el constructor de la clase VentanaJuego.
-        
-        :param parent: objeto grafico del parametro Dialog.
-        
-        :param filas: insertar numero de filas de la grilla.
-        :type filas: int
-        
-        :param columnas: insertar numero de columnas de la grilla.
-        :type columnas: int
-        
-        :param tiempo: ingresa el tiempo.
-        :type tiempo: int
-        
-        :param tipo: este sirve para elegir el tipo de tiempo.
-        :type tipo: int
                 
-        '''
-        
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Memoriza", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
         
