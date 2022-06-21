@@ -39,6 +39,7 @@ class VentanaJuego(wx.Dialog):
         self.filas=int(filas)
         self.columnas=int(columnas)
         self.par=int((self.filas*self.columnas)/2)
+        
         #Cambiar el color de fondo 
         self.SetBackgroundColour('#B9D9D7')
 
@@ -50,18 +51,14 @@ class VentanaJuego(wx.Dialog):
         self.gridsizer=wx.GridSizer(self.filas, self.columnas,3, 3)
         
         #Labels
-        self.lbl1 = wx.StaticText(self, label='0:00')
-        fuente1 = wx.Font(17, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
+        self.lbl1 = wx.StaticText(self, label='Inicio')
+        fuente1 = wx.Font(23, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
         self.lbl1.SetFont(fuente1)
         
-        self.lbltiempo = wx.StaticText(self, label='Tiempo Restante')
+        self.lbltiempo = wx.StaticText(self, label='TIEMPO RESTANTE')
         fuente2=self.lbltiempo.GetFont()
         fuente2.SetPointSize(15)
         self.lbltiempo.SetFont(fuente2)
-        
-        #Botones
-        self.btn1 = wx.Button(self, wx.ID_ANY, label='Iniciar Partida', size=(150, 25))
-        self.btn1.Bind(wx.EVT_BUTTON, self.InicioReloj)
         
         #Timer
         
@@ -73,7 +70,6 @@ class VentanaJuego(wx.Dialog):
             self.timer = wx.Timer(self)
             self.Bind(wx.EVT_TIMER, self.Cronometro,self.timer)
             
-        
         #Randomizador de la grilla
         rdm=random.sample(range(1,20),self.par)
         rdm.extend(rdm)
@@ -89,9 +85,8 @@ class VentanaJuego(wx.Dialog):
             
         #Configuracion sizer
         self.grillasizer.Add(self.gridsizer, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=10)
-        self.grillasizer.Add(self.lbltiempo,0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
-        self.grillasizer.Add(self.lbl1, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
-        self.grillasizer.Add(self.btn1, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
+        self.grillasizer.Add(self.lbltiempo,0, wx.ALIGN_CENTER|wx.ALL, border=0)
+        self.grillasizer.Add(self.lbl1, 0, wx.ALIGN_CENTER|wx.ALL, border=0)
         self.SetSizer(self.grillasizer)
         
         #Maximizar la ventana
@@ -100,11 +95,12 @@ class VentanaJuego(wx.Dialog):
         #Se muestra todo a la vez
         self.Show()
 
-    def InicioReloj(self, e):
-        self.timer.Start(1000)
+    def InicioReloj(self, event=None):
+        if not self.timer.IsRunning():
+            self.timer.Start(1000)
 
     def TerminoReloj(self, e):
-        if self.counter == 0:
+        if self.counter == -1:
             self.timer.Stop()
             self.lbl1.SetLabel('El juego ha terminado')
             return
@@ -116,16 +112,13 @@ class VentanaJuego(wx.Dialog):
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
         
     def Cronometro(self,e):
-        
         minutos = self.counter // 60
-        
         segundos = self.counter - (minutos * 60)
         self.counter += 1
-
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
         
-        
     def ContarCartas(self,event):
+        self.InicioReloj()
         self.clicks +=1
         
         boton=event.GetEventObject()
