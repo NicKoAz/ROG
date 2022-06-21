@@ -10,7 +10,15 @@ import time
 from wx import Bitmap, BitmapButton, CallLater
 
 
+<<<<<<< HEAD
     
+=======
+    image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
+    boton.SetBitmap(image)
+    
+    juego.SetBoton(nombreboton)
+    juego.SetButton(boton)
+>>>>>>> 5fb9507f79bbfd2db08b4be328ee3e7761968245
     
 
     

@@ -1,6 +1,3 @@
-import wx
-
-
 class CuentaPares():
     def __init__(self):
         self.pares=0
