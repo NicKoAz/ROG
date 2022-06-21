@@ -5,16 +5,12 @@ Created on 21 jun 2022
 '''
 import wx
 import random
-from modelo.CuentaPares import CuentaPares
 import time
 from vista.VentanaMensajePerdedor import VentanaMensajePerdedor
 from vista.VentanaMensajeGanador import VentanaMensajeGanador
 
 
-filas=4
-columnas=5
 
-juego=CuentaPares()
 
 class VentanaJuego(wx.Dialog):
 
