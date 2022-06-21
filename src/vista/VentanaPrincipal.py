@@ -31,7 +31,11 @@ class VentanaPrincipal(wx.Frame):
     def __init__(self):
         
         '''
+        
         Este es el constructor de la clase VentanaPrincipal
+        
+        :param self: parametro por default
+        
         '''
         
         wx.Frame.__init__(self, None, title="Encontrar Los Pares", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(568, 400))
@@ -76,6 +80,8 @@ class VentanaPrincipal(wx.Frame):
         
         Funcion encargada de mostrar en pantalla la VentanaModosDeJuego
         
+        :param self: parametro por default
+        
         :param i: inicializa un evento
         
         '''
@@ -90,6 +96,8 @@ class VentanaPrincipal(wx.Frame):
         '''
         
         Funcion encargada de cerrar la VentanaPrincipal
+        
+        :param self: parametro por default
         
         :param i: inicializa un evento
         

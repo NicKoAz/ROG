@@ -33,7 +33,9 @@ class VentanaModosDeJuego(wx.Dialog):
         
         Constructor de la clase VentanaModosDeJuego
         
-        :param parent: clase padre
+        :param self: parametro por default
+        
+        :param parent: Objeto grafico padre del Dialog
         
         '''
         
@@ -79,6 +81,8 @@ class VentanaModosDeJuego(wx.Dialog):
         '''
         
         Funcion encargada de guardar el nombre del boton en el que se hizo click y abrir la ventana de juego
+        
+        :param self: parametro por default
         
         :param event: inicializa un evento
         

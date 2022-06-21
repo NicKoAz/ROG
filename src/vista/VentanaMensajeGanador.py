@@ -33,7 +33,9 @@ class VentanaMensajeGanador(wx.Dialog):
         
         Constructor de la clase VentanaMesajePerdedor
         
-        :param parent: Clase padre
+        :param self: Parametro por default
+        
+        :param parent: Objeto grafico padre del Dialog
         
         '''
         
@@ -65,6 +67,10 @@ class VentanaMensajeGanador(wx.Dialog):
         '''
         
         Funcion encargada de cerrar la VentanaMensajeGanador
+        
+        :param self: Parametro por default
+        
+        :param i: Inicializa un evento
         
         '''
         
