@@ -34,10 +34,8 @@ class VentanaJuego(wx.Dialog):
     :type parent: wx.Dialog
     
     '''
-
-    def __init__ (self, parent, filas, columnas, tiempo, tipo):
-        
-        '''
+    
+    '''
         
         Es el constructor de la clase VentanaJuego.
         
@@ -53,6 +51,9 @@ class VentanaJuego(wx.Dialog):
         :type tipo: int
         
         '''
+    def __init__ (self, parent, filas, columnas, tiempo, tipo):
+        
+        
         
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Memoriza", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
