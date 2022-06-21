@@ -7,18 +7,9 @@ import wx
 import random
 from modelo.CuentaPares import CuentaPares
 import time
-from wx import Bitmap, BitmapButton, CallLater
 
 
-<<<<<<< HEAD
-    
-=======
-    image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
-    boton.SetBitmap(image)
-    
-    juego.SetBoton(nombreboton)
-    juego.SetButton(boton)
->>>>>>> 5fb9507f79bbfd2db08b4be328ee3e7761968245
+
     
 
     
@@ -38,8 +29,8 @@ class VentanaJuego(wx.Dialog):
         self.counter = int(tiempo)
         
         self.clicks=0
-        self.carta=BitmapButton
-        self.carta2=BitmapButton
+        self.carta=0
+        self.carta2=0
         self.nCarta=""
         self.nCarta2=""
         
@@ -158,10 +149,12 @@ class VentanaJuego(wx.Dialog):
             boton.SetBitmap(image)
             print("segundacarta")
             if nombreboton == self.nCarta:
-                time.sleep(1)
+                time.sleep(0)
                 
                 boton.Disable()
                 self.carta.Disable()
+                boton.SetBitmapDisabled(image)
+                self.carta.SetBitmapDisabled(image)
                 print("Son pares")
                 self.contPares+=1
                 self.clicks=0
