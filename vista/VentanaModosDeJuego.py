@@ -52,8 +52,8 @@ class VentanaModosDeJuego(wx.Dialog):
         
     def OnClick(self,event):
         labelbotones=event.GetEventObject().GetLabel()
-        print(labelbotones)
         self.Hide()
+        
         if labelbotones=="CONTRARELOJ-FACIL":
             ventanaJuego=VentanaJuego(self,4,4,90,1)
             

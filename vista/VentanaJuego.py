@@ -18,7 +18,7 @@ juego=CuentaPares()
 
 class VentanaJuego(wx.Dialog):
 
-    def __init__ (self,parent,filas,columnas, tiempo,tipo):
+    def __init__ (self, parent, filas, columnas, tiempo, tipo):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Memoriza", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
         
@@ -59,7 +59,6 @@ class VentanaJuego(wx.Dialog):
         self.lbltiempo.SetFont(fuente2)
         
         #Timer
-        
         if self.tipo==1:
             self.timer = wx.Timer(self)
             self.Bind(wx.EVT_TIMER, self.TerminoReloj, self.timer)
@@ -72,8 +71,7 @@ class VentanaJuego(wx.Dialog):
         rdm=random.sample(range(1,20),self.par)
         rdm.extend(rdm)
         random.shuffle(rdm)
-        #print(rdm)
-        
+
         #Agregando sizer
         for i in (rdm):
             imagefile=wx.Image("../Cards/back.png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
@@ -126,7 +124,6 @@ class VentanaJuego(wx.Dialog):
         
         boton=event.GetEventObject()
         nombreboton=event.GetEventObject().GetName()
-        #print(nombreboton)
 
         image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
         boton.SetBitmap(image)
@@ -134,15 +131,13 @@ class VentanaJuego(wx.Dialog):
         if self.clicks==1:
             self.carta=boton
             self.nCarta=nombreboton
-            #print ("primera carta")
             
             self.carta.Bind(wx.EVT_BUTTON,self.CartasTemp)
             
         elif self.clicks==2:
-            
             image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
             boton.SetBitmap(image)
-            print("segundacarta")
+            
             if nombreboton == self.nCarta:
                 time.sleep(0)
                 
@@ -150,25 +145,25 @@ class VentanaJuego(wx.Dialog):
                 self.carta.Disable()
                 boton.SetBitmapDisabled(image)
                 self.carta.SetBitmapDisabled(image)
-                #print("Son pares")
                 self.contPares+=1
                 self.clicks=0
+                
             elif nombreboton != self.nCarta:
                 self.carta2=boton
                 self.nCarta2=nombreboton
-                self.carta2.Bind(wx.EVT_BUTTON,self.CartasTemp)
+                self.carta2.Bind(wx.EVT_BUTTON, self.CartasTemp)
+                
         elif self.clicks==3:
             image=wx.Image("../Cards/back.png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
             self.carta.SetBitmap(image)
-            self.carta.Bind(wx.EVT_BUTTON,self.ContarCartas)
+            self.carta.Bind(wx.EVT_BUTTON, self.ContarCartas)
             self.carta2.SetBitmap(image)
-            self.carta2.Bind(wx.EVT_BUTTON,self.ContarCartas)
+            self.carta2.Bind(wx.EVT_BUTTON, self.ContarCartas)
             self.carta=boton
             self.nCarta=nombreboton
-            #print ("primera carta")
             self.clicks=1
         
-        if self.contPares==self.par:
+        elif self.contPares==self.par:
             self.timer.Stop()
             self.Hide()
             ventanaMensaje=VentanaMensajeGanador(self)
