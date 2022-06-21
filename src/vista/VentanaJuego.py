@@ -11,14 +11,28 @@ from vista.VentanaMensajePerdedor import VentanaMensajePerdedor
 from vista.VentanaMensajeGanador import VentanaMensajeGanador
 
 
-filas=4
-columnas=5
+#filas=4
+#columnas=5
 
 juego=CuentaPares()
 
+'''
+    Esto es un documento
+'''
+
+'''
+    Esto es una clase
+'''
+
 class VentanaJuego(wx.Dialog):
+    '''
+    Encargada de 
+    '''
 
     def __init__ (self,parent,filas,columnas, tiempo,tipo):
+        '''
+        Encargada de 
+        '''
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Memoriza", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
         
@@ -94,10 +108,16 @@ class VentanaJuego(wx.Dialog):
         self.Show()
 
     def InicioReloj(self, e=None):
+        '''
+        Encargada de 
+        '''
         if not self.timer.IsRunning():
             self.timer.Start(1000)
 
     def TerminoReloj(self, e):
+        '''
+        Encargada de 
+        '''
         if self.counter == -1:
             self.timer.Stop()
             self.Hide()
@@ -112,15 +132,24 @@ class VentanaJuego(wx.Dialog):
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
         
     def Cronometro(self,e):
+        '''
+        Encargada de 
+        '''
         minutos = self.counter // 60
         segundos = self.counter - (minutos * 60)
         self.counter += 1
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
         
     def CartasTemp(self,event):
+        '''
+        Encargada de 
+        '''
         pass
         
     def ContarCartas(self,event):
+        '''
+        Encargada de 
+        '''
         self.InicioReloj()
         self.clicks +=1
         

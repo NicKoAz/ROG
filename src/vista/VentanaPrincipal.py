@@ -3,13 +3,31 @@ Created on 21 jun 2022
 
 @author: Nico
 '''
+
 import wx
 from vista.VentanaModosDeJuego import VentanaModosDeJuego
 
 
+'''
+    Esto es un documento
+'''
+
+'''
+    Esto es una clase
+'''
+
 class VentanaPrincipal(wx.Frame):
+    
+    '''
+    Clase encargada de mostrar la ventana principal del juego
+    '''
 
     def __init__(self):
+        
+        '''
+        Este es el constructor de la clase ventana principal
+        '''
+        
         wx.Frame.__init__(self, None, title="Encontrar Los Pares", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(568, 400))
         
         self.panel = wx.Panel(self)
@@ -47,11 +65,23 @@ class VentanaPrincipal(wx.Frame):
 
         
     def InicioJuego(self,i):
+        
+        '''
+        Funcion encargada de mostrar en pantalla la VentanaModosDeJuego
+        
+        :param i: inicializa un evento
+        '''
         self.Hide()
         ventanaMode=VentanaModosDeJuego(self)
         ventanaMode.ShowModal()
         ventanaMode.Destroy()
     
     def FinDelJuego(self,i):
+        
+        '''
+        Funcion encargada de cerrar la VentanaPrincipal
+        
+        :param i: inicializa un evento
+        '''
         VentanaPrincipal()
         self.Destroy()

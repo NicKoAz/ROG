@@ -3,12 +3,30 @@ Created on 21 jun 2022
 
 @author: Nico
 '''
+
 import wx
 from vista.VentanaJuego import VentanaJuego
 
+'''
+    Esto es un documento
+'''
+
+'''
+    Esto es una clase
+'''
+
 class VentanaModosDeJuego(wx.Dialog):
+    '''
+    Clase encargada de mostrar la ventana de los modos de juego
+    '''
 
     def __init__ (self, parent):
+        
+        '''
+        Constructor de la clase VentanaModosDeJuego
+        :param parent: hereda ...
+        '''
+        
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Modos De Juego", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(568, 400))
         
         self.panel = wx.Panel(self)
@@ -24,7 +42,6 @@ class VentanaModosDeJuego(wx.Dialog):
         self.btnmodolibrenormal = wx.Button(self.box1, label = "MODO LIBRE-NORMAL", size=(155, 50), pos=(300, 190))
         self.btnmodolibredificil = wx.Button(self.box1, label = "MODO LIBRE-DIFICIL", size=(155, 50), pos=(300, 255))
     
-        
         #Modificar fuente de letra StaticText
         font1=self.lbl1.GetFont()
         font1.SetPointSize(20)
@@ -50,9 +67,16 @@ class VentanaModosDeJuego(wx.Dialog):
     #Funcion que permite guardar el nombre del boton en el que se hizo click y abrir la ventana del juego
         
     def OnClick(self,event):
+        
+        '''
+        Funcion encargada de guardar el click que hace el usuario por pantalla de los modos de juego
+        
+        :param event: inicializa un evento
+        '''
+        
         labelbotones=event.GetEventObject().GetLabel()
-        print(labelbotones)
         self.Hide()
+        
         if labelbotones=="CONTRARELOJ-FACIL":
             ventanaJuego=VentanaJuego(self,4,4,90,1)
             
@@ -71,7 +95,5 @@ class VentanaModosDeJuego(wx.Dialog):
         elif labelbotones=="MODO LIBRE-DIFICIL":
             ventanaJuego=VentanaJuego(self,4,7,0,2)
             
-        
-        
         ventanaJuego.ShowModal()
         ventanaJuego.Destroy()

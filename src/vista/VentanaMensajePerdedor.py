@@ -3,9 +3,21 @@ Created on 21 jun 2022
 
 @author: Nico
 '''
+
 import wx
 
+'''
+    Esto es un documento
+'''
+
+'''
+    Esto es una clase
+'''
+
 class VentanaMensajePerdedor(wx.Dialog):
+    '''
+    Encargada de 
+    '''
 
     def __init__ (self, parent):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Mensaje", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(600, 200))
@@ -32,5 +44,8 @@ class VentanaMensajePerdedor(wx.Dialog):
         self.Centre(True)
         
     def FinDePartida(self, i):
+        '''
+        Encargada de 
+        '''
         VentanaMensajePerdedor(self)
         self.Destroy()
