@@ -8,23 +8,33 @@ import wx
 from vista.VentanaJuego import VentanaJuego
 
 '''
+
     Esto es un documento
+    
 '''
 
 '''
+
     Esto es una clase
+    
 '''
 
 class VentanaModosDeJuego(wx.Dialog):
+    
     '''
-    Clase encargada de mostrar la ventana de los modos de juego
+    
+    Clase encargada de mostrar la ventana de dialogo de los modos de juego
+    
     '''
 
     def __init__ (self, parent):
         
         '''
+        
         Constructor de la clase VentanaModosDeJuego
-        :param parent: hereda ...
+        
+        :param parent: clase padre
+        
         '''
         
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Modos De Juego", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(568, 400))
@@ -64,14 +74,14 @@ class VentanaModosDeJuego(wx.Dialog):
         #Para que la ventana se abra en el centro de la pantalla
         self.Centre(True)
         
-    #Funcion que permite guardar el nombre del boton en el que se hizo click y abrir la ventana del juego
-        
     def OnClick(self,event):
         
         '''
-        Funcion encargada de guardar el click que hace el usuario por pantalla de los modos de juego
+        
+        Funcion encargada de guardar el nombre del boton en el que se hizo click y abrir la ventana de juego
         
         :param event: inicializa un evento
+        
         '''
         
         labelbotones=event.GetEventObject().GetLabel()
