@@ -132,6 +132,9 @@ class VentanaJuego(wx.Dialog):
         if self.clicks==1:
             self.carta=boton
             self.nCarta=nombreboton
+            
+
+            
              
             print ("primera carta")
             
