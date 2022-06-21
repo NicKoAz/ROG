@@ -6,29 +6,10 @@ Created on 14-06-2022
 import wx
 import random
 from modelo.CuentaPares import CuentaPares
+import time
+from wx import Bitmap, BitmapButton, CallLater
 
-def GetLabel(event):
-    boton=event.GetEventObject()
-    nombreboton=event.GetEventObject().GetName()
-    
-    print(nombreboton)
 
-    image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
-    boton.SetBitmap(image)
-    
-    juego.SetBoton(nombreboton)
-    juego.SetButton(boton)
-    
-    
-
-            
-           
-            
-            
-    
-        
-        
-        
     
     
 
@@ -47,6 +28,14 @@ class VentanaJuego(wx.Dialog):
         self.tipo=int(tipo)
         self.panel = wx.Panel(self)
         self.counter = int(tiempo)
+        
+        self.clicks=0
+        self.carta=BitmapButton
+        self.carta2=BitmapButton
+        self.nCarta=""
+        self.nCarta2=""
+        
+        self.contPares=0
         
         self.filas=int(filas)
         self.columnas=int(columnas)
@@ -97,7 +86,7 @@ class VentanaJuego(wx.Dialog):
             imagefile=wx.Image("../Cards/back.png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
             btn=str(i)
             self.gridsizer.Add(wx.BitmapButton(self,name=btn,bitmap=imagefile, size= (imagefile.GetWidth(), imagefile.GetHeight() )),-1,wx.ALL|wx.ALIGN_CENTER,border=2)
-            self.Bind(wx.EVT_BUTTON,GetLabel)
+            self.Bind(wx.EVT_BUTTON,self.ContarCartas)
             
         #Configuracion sizer
         self.grillasizer.Add(self.gridsizer, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=10)
@@ -136,6 +125,62 @@ class VentanaJuego(wx.Dialog):
 
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
         
+        
+    def ContarCartas(self,event):
+        self.clicks +=1
+        
+        boton=event.GetEventObject()
+        nombreboton=event.GetEventObject().GetName()
+        print(nombreboton)
+
+        image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
+        boton.SetBitmap(image)
+        
+        
+        if self.clicks==1:
+            self.carta=boton
+            self.nCarta=nombreboton
+             
+            print ("primera carta")
+            
+            
+        elif self.clicks==2:
+            
+            image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
+            boton.SetBitmap(image)
+            print("segundacarta")
+            if nombreboton == self.nCarta:
+                time.sleep(1)
+                
+                boton.Disable()
+                self.carta.Disable()
+                print("Son pares")
+                self.contPares+=1
+                self.clicks=0
+            elif nombreboton != self.nCarta:
+                self.carta2=boton
+                self.nCarta2=nombreboton
+        elif self.clicks==3:
+            image=wx.Image("../Cards/back.png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
+            self.carta.SetBitmap(image)
+            self.carta2.SetBitmap(image)
+            self.carta=boton
+            self.nCarta=nombreboton
+            print ("primera carta")
+            self.clicks=1
+        
+            
+            
+        if self.contPares==self.par:
+            print("!!!!!!!!!WHHHHOOOAAAADUDEEE")   
+        
+                
+        
+        
+        
+        
+        
+
 
 
 
