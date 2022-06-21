@@ -7,6 +7,7 @@ import wx
 import random
 from modelo.CuentaPares import CuentaPares
 import time
+from vista.VentanaMensaje import VentanaMensaje
 
 
 
@@ -102,7 +103,9 @@ class VentanaJuego(wx.Dialog):
     def TerminoReloj(self, e):
         if self.counter == -1:
             self.timer.Stop()
-            self.lbl1.SetLabel('El juego ha terminado')
+            self.Hide()
+            ventanaMensaje=VentanaMensaje(self)
+            ventanaMensaje.ShowModal()
             return
         else:
             minutos = self.counter // 60
