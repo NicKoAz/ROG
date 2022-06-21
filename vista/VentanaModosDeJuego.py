@@ -1,9 +1,8 @@
 '''
-Created on 15-06-2022
+Created on 21 jun 2022
 
-@author: carol
+@author: Nico
 '''
-
 import wx
 from vista.VentanaJuego import VentanaJuego
 
@@ -76,5 +75,3 @@ class VentanaModosDeJuego(wx.Dialog):
         
         ventanaJuego.ShowModal()
         ventanaJuego.Destroy()
-
-

@@ -1,9 +1,8 @@
 '''
-Created on 16-05-2022
+Created on 21 jun 2022
 
-@author: carol
+@author: Nico
 '''
-
 import wx
 from vista.VentanaModosDeJuego import VentanaModosDeJuego
 
@@ -56,6 +55,3 @@ class VentanaPrincipal(wx.Frame):
     def FinDelJuego(self,i):
         VentanaPrincipal()
         self.Destroy()
-
-
-    
