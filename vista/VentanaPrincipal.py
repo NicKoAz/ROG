@@ -3,7 +3,6 @@ Created on 16-05-2022
 
 @author: carol
 '''
-
 import wx
 from vista.VentanaModosDeJuego import VentanaModosDeJuego
 
@@ -49,13 +48,11 @@ class VentanaPrincipal(wx.Frame):
         
     def InicioJuego(self,i):
         self.Hide()
-        ventanaModos=VentanaModosDeJuego(self)
-        ventanaModos.ShowModal()
-        ventanaModos.Destroy()
+        ventanaMode=VentanaModosDeJuego(self)
+        ventanaMode.ShowModal()
+        ventanaMode.Destroy()
     
     def FinDelJuego(self,i):
         VentanaPrincipal()
         self.Destroy()
-
-
     

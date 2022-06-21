@@ -18,27 +18,25 @@ def GetLabel(event):
     image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
     boton.SetBitmap(image)
 
-
-def TestNombre(event):
-    print("hola")
-    
-filas=4
-columnas=5
-
 class VentanaJuego(wx.Dialog):
 
-    def __init__ (self, parent):
+    def __init__ (self, parent, filas, columnas, tiempo, tipo):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Memoriza", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
-        
+
+        self.tipo=int(tipo)
         self.panel = wx.Panel(self)
-        self.counter = 3
+        self.counter = int(tiempo)
+        
+        self.filas=int(filas)
+        self.columnas=int(columnas)
+        self.par=int((self.filas*self.columnas)/2)
         
         #Cambiar el color de fondo 
         self.SetBackgroundColour('#B9D9D7')
         
         #Sizers
         self.grillasizer=wx.BoxSizer(wx.VERTICAL)
-        self.gridsizer=wx.GridSizer(filas,columnas,3,3)
+        self.gridsizer=wx.GridSizer(self.filas, self.columnas,3, 3)
         
         #Labels
         self.lbl1 = wx.StaticText(self, label='0:00')
@@ -51,15 +49,21 @@ class VentanaJuego(wx.Dialog):
         self.lbltiempo.SetFont(fuente2)
         
         #Botones
-        self.btn1 = wx.Button(self, wx.ID_ANY, label='Iniciar Partida', size=(150, 25))
-        self.btn1.Bind(wx.EVT_BUTTON, self.InicioReloj)
+        #self.btn1 = wx.Button(self, wx.ID_ANY, label='Iniciar Partida', size=(150, 25))
+        #self.btn1.Bind(wx.EVT_BUTTON, self.InicioReloj)
         
         #Timer
-        self.timer = wx.Timer(self)
-        self.Bind(wx.EVT_TIMER, self.TerminoReloj, self.timer)
+        
+        if self.tipo==1:
+            self.timer = wx.Timer(self)
+            self.Bind(wx.EVT_TIMER, self.TerminoReloj, self.timer)
+            
+        elif self.tipo==2:
+            self.timer = wx.Timer(self)
+            self.Bind(wx.EVT_TIMER, self.Cronometro,self.timer)
         
         #Randomizador de la grilla
-        rdm=random.sample(range(1,20),10)
+        rdm=random.sample(range(1,20),self.par)
         rdm.extend(rdm)
         random.shuffle(rdm)
         print(rdm)
@@ -69,13 +73,13 @@ class VentanaJuego(wx.Dialog):
             imagefile=wx.Image("../Cards/back.png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
             btn=str(i)
             self.gridsizer.Add(wx.BitmapButton(self,name=btn,bitmap=imagefile, size= (imagefile.GetWidth(), imagefile.GetHeight() )),-1,wx.ALL|wx.ALIGN_CENTER,border=2)
-            self.Bind(wx.EVT_BUTTON,GetLabel)
-        
+            self.Bind(wx.EVT_BUTTON, GetLabel)
+            
         #Configuracion sizer
         self.grillasizer.Add(self.gridsizer, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=10)
         self.grillasizer.Add(self.lbltiempo,0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
         self.grillasizer.Add(self.lbl1, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
-        self.grillasizer.Add(self.btn1, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
+        #self.grillasizer.Add(self.btn1, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, border=0)
         self.SetSizer(self.grillasizer)
         
         #Maximizar la ventana
@@ -84,10 +88,14 @@ class VentanaJuego(wx.Dialog):
         #Se muestra todo a la vez
         self.Show()
 
-    def InicioReloj(self, e):
-        self.timer.Start(1000)
+    def InicioReloj(self, event):
+        posicionpieza = (event.self.filas, event.self.columnas)
+        if (not self.gridsizer [posicionpieza]):
+            return
+        if not self.timer.IsRunning():
+            self.timer.Start(1000)
 
-    def TerminoReloj(self, e):
+    def TerminoReloj(self, event):
         if self.counter == -1: #0
             self.timer.Stop()
             self.Hide()
@@ -99,5 +107,10 @@ class VentanaJuego(wx.Dialog):
             segundos = self.counter - (minutos * 60)
             self.counter -= 1
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
-        #self.TimeLabelCounter = wx.StaticText(self, label=f"{minutos:02}:{segundos:02}")
-
+    
+    def Cronometro(self,e):
+        minutos = self.counter // 60
+        segundos = self.counter - (minutos * 60)
+        self.counter += 1
+        self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
+        

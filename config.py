@@ -5,7 +5,7 @@ class Config():
         self.config=configparser.ConfigParser()
         self.config.read("config.ini")
     def getConfig(self):
-        return (self.config["DIFICULTAD"]["filaFacil"])
+        return (self.config["DIFICULTAD"]["filaFacil\n"])
     
     
 leer=Config()
