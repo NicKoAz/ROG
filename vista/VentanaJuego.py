@@ -6,7 +6,7 @@ Created on 19-06-2022
 
 import wx
 import random
-from vista.VentanaMensaje import VentanaMensaje
+from vista.VentanaMensajeOne import VentanaMensajeOne
 
 
 def GetLabel(event):
@@ -88,18 +88,15 @@ class VentanaJuego(wx.Dialog):
         #Se muestra todo a la vez
         self.Show()
 
-    def InicioReloj(self, event):
-        posicionpieza = (self.filas, self.columnas)
-        if (not self.gridsizer [posicionpieza]):
-            return
-        if self.timer.IsRunning():
+    def InicioReloj(self, e=None):
+        if not self.timer.IsRunning():
             self.timer.Start(1000)
 
-    def TerminoReloj(self, event):
+    def TerminoReloj(self, e):
         if self.counter == -1: #0
             self.timer.Stop()
             self.Hide()
-            ventanaMensaje=VentanaMensaje(self)
+            ventanaMensaje=VentanaMensajeOne(self)
             ventanaMensaje.ShowModal()
             return
         else:

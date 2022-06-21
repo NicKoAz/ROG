@@ -5,7 +5,7 @@ Created on 20-06-2022
 '''
 import wx
 
-class VentanaMensaje(wx.Dialog):
+class VentanaMensajeOne(wx.Dialog):
 
     def __init__ (self, parent):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Mensaje", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(600, 200))
@@ -32,7 +32,7 @@ class VentanaMensaje(wx.Dialog):
         self.Centre(True)
         
     def FinDePartida(self, i):
-        VentanaMensaje(self)
+        VentanaMensajeOne(self)
         self.Destroy()
             
         
