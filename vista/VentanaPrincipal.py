@@ -4,6 +4,10 @@ Created on 21 jun 2022
 @author: Nico
 '''
 
+'''
+    Esto es un documento
+'''
+
 import wx
 from vista.VentanaModosDeJuego import VentanaModosDeJuego
 
