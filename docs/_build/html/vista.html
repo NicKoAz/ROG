@@ -93,43 +93,67 @@
 <dt class="sig sig-object py" id="vista.VentanaJuego.VentanaJuego">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vista.VentanaJuego.</span></span><span class="sig-name descname"><span class="pre">VentanaJuego</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columnas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tiempo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tipo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaJuego.VentanaJuego" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Dialog</span></code></p>
-<p>Encargada de</p>
+<p>Encargada de mostrar el tablero y el tiempo del juego</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parent</strong> (<em>wx.Dialog</em>) – Objeto grafico padre del Dialog</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="vista.VentanaJuego.VentanaJuego.CartasTemp">
 <span class="sig-name descname"><span class="pre">CartasTemp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaJuego.VentanaJuego.CartasTemp" title="Permalink to this definition"></a></dt>
-<dd><p>Encargada de</p>
+<dd><p>Funcion temporal encargada de bloquear que la primera carta no se pueda hacer click dos veces y contar como par.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> – inicializa un evento.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="vista.VentanaJuego.VentanaJuego.ContarCartas">
 <span class="sig-name descname"><span class="pre">ContarCartas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaJuego.VentanaJuego.ContarCartas" title="Permalink to this definition"></a></dt>
-<dd><p>Encargada de</p>
+<dd><p>Funcion encargada de verificar si son pares o no, en caso de que sean añadir un contador; ademas se encarga de que la carta se de vuelta una vez se haga click.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>wx.EVT</em>) – inicializa el evento GetName.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="vista.VentanaJuego.VentanaJuego.Cronometro">
-<span class="sig-name descname"><span class="pre">Cronometro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaJuego.VentanaJuego.Cronometro" title="Permalink to this definition"></a></dt>
-<dd><p>Encargada de ir aumentando el contador y posteriormente mostrarlo en pantalla</p>
+<span class="sig-name descname"><span class="pre">Cronometro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaJuego.VentanaJuego.Cronometro" title="Permalink to this definition"></a></dt>
+<dd><p>Encargada de ir aumentando el contador y posteriormente mostrarlo en pantalla.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>wx.EVT_Timer</em>) – inicializa un evento de wx.Timer.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="vista.VentanaJuego.VentanaJuego.InicioReloj">
-<span class="sig-name descname"><span class="pre">InicioReloj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaJuego.VentanaJuego.InicioReloj" title="Permalink to this definition"></a></dt>
-<dd><p>Encargada de</p>
+<span class="sig-name descname"><span class="pre">InicioReloj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaJuego.VentanaJuego.InicioReloj" title="Permalink to this definition"></a></dt>
+<dd><p>Encargada de inicializar el tiempo una vez se aprete la primera carta.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>wx.EVT_Timer</em>) – inicializa un evento en None de wx.Time.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="vista.VentanaJuego.VentanaJuego.TerminoReloj">
-<span class="sig-name descname"><span class="pre">TerminoReloj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaJuego.VentanaJuego.TerminoReloj" title="Permalink to this definition"></a></dt>
-<dd><p>Encargada de ir desminuyendo el contador y posteriormente mostrarlo en pantalla</p>
+<span class="sig-name descname"><span class="pre">TerminoReloj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaJuego.VentanaJuego.TerminoReloj" title="Permalink to this definition"></a></dt>
+<dd><p>Encargada de ir desminuyendo el contador y posteriormente mostrarlo en pantalla.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>wx.EVT_Timer</em>) – inicializa un evento de wx.Timer.</p>
+</dd>
+</dl>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="vista.VentanaJuego.juego">
-<span class="sig-prename descclassname"><span class="pre">vista.VentanaJuego.</span></span><span class="sig-name descname"><span class="pre">juego</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;modelo.CuentaPares.CuentaPares</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#vista.VentanaJuego.juego" title="Permalink to this definition"></a></dt>
-<dd><p>Esto es un documento</p>
 </dd></dl>
 
 </section>
@@ -142,10 +166,23 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vista.VentanaMensajeGanador.</span></span><span class="sig-name descname"><span class="pre">VentanaMensajeGanador</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaMensajeGanador.VentanaMensajeGanador" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Dialog</span></code></p>
 <p>Clase encargada de mostrar la ventana de dialogo del mensaje perdedor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parent</strong> (<em>wx.Dialog</em>) – Objeto grafico padre del Dialog</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="vista.VentanaMensajeGanador.VentanaMensajeGanador.FinDePartida">
 <span class="sig-name descname"><span class="pre">FinDePartida</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaMensajeGanador.VentanaMensajeGanador.FinDePartida" title="Permalink to this definition"></a></dt>
 <dd><p>Funcion encargada de cerrar la VentanaMensajeGanador</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Parametro por default</p></li>
+<li><p><strong>i</strong> – Inicializa un evento</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -160,13 +197,21 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vista.VentanaMensajePerdedor.</span></span><span class="sig-name descname"><span class="pre">VentanaMensajePerdedor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaMensajePerdedor.VentanaMensajePerdedor" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Dialog</span></code></p>
 <p>Clase encargada de mostrar la ventana de dialogo del mensaje perdedor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parent</strong> (<em>wx.Dialog</em>) – Objeto grafico padre del Dialog</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="vista.VentanaMensajePerdedor.VentanaMensajePerdedor.FinDePartida">
 <span class="sig-name descname"><span class="pre">FinDePartida</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaMensajePerdedor.VentanaMensajePerdedor.FinDePartida" title="Permalink to this definition"></a></dt>
 <dd><p>Funcion encargada de cerrar la VentanaMensajeGanador</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>i</strong> – inicializa un evento</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – parametro por default</p></li>
+<li><p><strong>i</strong> – inicializa un evento</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -183,13 +228,21 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vista.VentanaModosDeJuego.</span></span><span class="sig-name descname"><span class="pre">VentanaModosDeJuego</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaModosDeJuego.VentanaModosDeJuego" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Dialog</span></code></p>
 <p>Clase encargada de mostrar la ventana de dialogo de los modos de juego</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parent</strong> (<em>wx.Dialog</em>) – Objeto grafico padre del Dialog</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="vista.VentanaModosDeJuego.VentanaModosDeJuego.OnClick">
 <span class="sig-name descname"><span class="pre">OnClick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaModosDeJuego.VentanaModosDeJuego.OnClick" title="Permalink to this definition"></a></dt>
 <dd><p>Funcion encargada de guardar el nombre del boton en el que se hizo click y abrir la ventana de juego</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> – inicializa un evento</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – parametro por default</p></li>
+<li><p><strong>event</strong> (<em>wx.EVT</em>) – inicializa el evento GetLabel</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -206,13 +259,21 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vista.VentanaPrincipal.</span></span><span class="sig-name descname"><span class="pre">VentanaPrincipal</span></span><a class="headerlink" href="#vista.VentanaPrincipal.VentanaPrincipal" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code></p>
 <p>Clase encargada de mostrar la ventana principal del juego</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parent</strong> (<em>wx.frame</em>) – Objeto grafico padre del Frame</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="vista.VentanaPrincipal.VentanaPrincipal.FinDelJuego">
 <span class="sig-name descname"><span class="pre">FinDelJuego</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vista.VentanaPrincipal.VentanaPrincipal.FinDelJuego" title="Permalink to this definition"></a></dt>
 <dd><p>Funcion encargada de cerrar la VentanaPrincipal</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>i</strong> – inicializa un evento</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – parametro por default</p></li>
+<li><p><strong>i</strong> – inicializa un evento</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -223,7 +284,10 @@
 <dd><p>Funcion encargada de mostrar en pantalla la VentanaModosDeJuego</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>i</strong> – inicializa un evento</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – parametro por default</p></li>
+<li><p><strong>i</strong> – inicializa un evento</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
