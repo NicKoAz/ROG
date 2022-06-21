@@ -5,13 +5,11 @@ Created on 21 jun 2022
 '''
 import wx
 import random
-from modelo.CuentaPares import CuentaPares
 import time
 from vista.VentanaMensajePerdedor import VentanaMensajePerdedor
 from vista.VentanaMensajeGanador import VentanaMensajeGanador
 
 
-juego=CuentaPares()
 
 '''
     Esto es un documento
