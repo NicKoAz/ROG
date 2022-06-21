@@ -38,6 +38,7 @@ class VentanaJuego(wx.Dialog):
     def __init__ (self, parent, filas, columnas, tiempo, tipo):
         
         '''
+        
         Encargada de el constructor de la clase VentanaJuego.
         
         :param self: parametro por default.
