@@ -24,7 +24,8 @@ from vista.VentanaMensajeGanador import VentanaMensajeGanador
 
 class VentanaJuego(wx.Dialog):
     '''
-    Encargada de mostrar la interfaz del tablero
+    
+    Clase encargada de mostrar la interfaz del tablero
     
     :param parent: Objeto grafico padre del Dialog
     :type parent: wx.Dialog
