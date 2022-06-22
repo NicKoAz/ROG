@@ -72,7 +72,6 @@ class VentanaJuego(wx.Dialog):
         rdm=random.sample(range(1,20),self.par)
         rdm.extend(rdm)
         random.shuffle(rdm)
-        #print(rdm)
         
         #Agregando sizer
         for i in (rdm):
