@@ -21,7 +21,7 @@ class VentanaMensajeGanador(wx.Dialog):
     
     '''
     
-    Clase encargada de mostrar la ventana de dialogo del mensaje perdedor
+    Clase encargada de mostrar la ventana de dialogo del mensaje ganador
 
     :param parent: Objeto grafico padre del Dialog
     :type parent: wx.Dialog

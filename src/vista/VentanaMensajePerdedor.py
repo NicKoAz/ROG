@@ -57,7 +57,7 @@ class VentanaMensajePerdedor(wx.Dialog):
         
         '''
         
-        Funcion encargada de cerrar la VentanaMensajeGanador
+        Funcion encargada de cerrar la VentanaMensajePerdedor
         
         :param i: inicializa un evento
         '''

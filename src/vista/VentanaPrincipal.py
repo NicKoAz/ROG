@@ -73,7 +73,6 @@ class VentanaPrincipal(wx.Frame):
         
         Funcion encargada de mostrar en pantalla la VentanaModosDeJuego
         
-        
         :param i: inicializa un evento
         
         '''

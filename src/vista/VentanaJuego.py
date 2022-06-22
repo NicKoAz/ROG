@@ -108,9 +108,9 @@ class VentanaJuego(wx.Dialog):
     def InicioReloj(self, event=None):
         
         '''
-        Encargada de inicializar el tiempo una vez se aprete la primera carta.
+        Funcion encargada de inicializar el tiempo una vez se presione la primera carta.
         
-        :param event: inicializa un evento en None de wx.Time.
+        :param event: inicializa un evento en None de wx.Timer.
         :type event: wx.EVT_Timer
         '''
         if not self.timer.IsRunning():
@@ -119,7 +119,7 @@ class VentanaJuego(wx.Dialog):
     def TerminoReloj(self, event):
         
         '''
-        Encargada de ir desminuyendo el contador y posteriormente mostrarlo en pantalla.
+        Funcion encargada de ir desminuyendo el contador y posteriormente mostrarlo en pantalla.
         
         :param event: inicializa un evento de wx.Timer.
         :type event: wx.EVT_Timer
@@ -140,7 +140,7 @@ class VentanaJuego(wx.Dialog):
     def Cronometro(self, event):
         
         '''
-        Encargada de ir aumentando el contador y posteriormente mostrarlo en pantalla.
+        Funcion encargada de ir aumentando el contador y posteriormente mostrarlo en pantalla.
         
         :param event: inicializa un evento de wx.Timer.
         :type event: wx.EVT_Timer
@@ -154,9 +154,10 @@ class VentanaJuego(wx.Dialog):
     def CartasTemp(self, event):
         
         '''
-        Funcion temporal encargada de bloquear que la primera carta no se pueda hacer click dos veces y contar como par.
+        Funcion temporal encargada de bloquear que la primera carta para que no se pueda hacer click dos veces y contar como par.
         
         :param event: inicializa un evento.
+        :type event: wx.EVT
         
         '''
         
@@ -165,7 +166,7 @@ class VentanaJuego(wx.Dialog):
     def ContarCartas(self, event):
         
         '''
-        Funcion encargada de verificar si son pares o no, en caso de que sean añadir un contador; ademas se encarga de que la carta se de vuelta una vez se haga click.
+        Funcion encargada de verificar si son pares o no, en caso de que sean agregar un contador; ademas se encarga de que la carta se de vuelta una vez se haga click.
         
         :param event: inicializa el evento GetName.
         :type event: wx.EVT
@@ -190,7 +191,6 @@ class VentanaJuego(wx.Dialog):
             
             image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
             boton.SetBitmap(image)
-            print("segundacarta")
             if nombreboton == self.nCarta:
                 time.sleep(0)
                 
