@@ -92,7 +92,12 @@ class VentanaJuego(wx.Dialog):
         
         #Se muestra todo a la vez
         self.Show()
-
+    
+    ##
+    # Esta funcion sirve para que inicie el reloj 
+    #
+    # @param e Sirve para inicializar un evento, en este caso inicializa en None
+    #
     def InicioReloj(self, e=None):
         if not self.timer.IsRunning():
             self.timer.Start(1000)
