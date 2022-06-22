@@ -9,8 +9,14 @@ import time
 from vista.VentanaMensajePerdedor import VentanaMensajePerdedor
 from vista.VentanaMensajeGanador import VentanaMensajeGanador
 
+###
+# Esto es una clase
+#
 
 class VentanaJuego(wx.Dialog):
+    ##
+    # Este es el constructor de la clase VentanaJuego
+    #
 
     def __init__ (self,parent,filas,columnas, tiempo,tipo):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Memoriza", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))

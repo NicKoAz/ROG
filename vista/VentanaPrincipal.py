@@ -18,7 +18,7 @@ from vista.VentanaModosDeJuego import VentanaModosDeJuego
 class VentanaPrincipal(wx.Frame):
     
     ##
-    #Este es el constructor de la clase VentanaPrincipal
+    # Este es el constructor de la clase VentanaPrincipal
     #
 
     def __init__(self):
@@ -58,9 +58,9 @@ class VentanaPrincipal(wx.Frame):
         self.Centre(True)
 
     ##
-    #Esta funcion sirve para abrir la Ventana de Modos de Juego 
+    # Esta funcion sirve para abrir la Ventana de Modos de Juego 
     #
-    #@param i Sirve para inicializar un evento 
+    # @param i Sirve para inicializar un evento 
     #
     def InicioJuego(self,i):
         self.Hide()
@@ -71,7 +71,7 @@ class VentanaPrincipal(wx.Frame):
     ##
     #Esta funcion sirve para abrir la Ventana de Modos de Juego
     # 
-    #@param i Sirve para inicializar un evento 
+    # @param i Sirve para inicializar un evento 
     #
     def FinDelJuego(self,i):
         VentanaPrincipal()
