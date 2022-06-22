@@ -49,7 +49,7 @@ class VentanaJuego(wx.Dialog):
         fuente1 = wx.Font(23, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
         self.lbl1.SetFont(fuente1)
         
-        self.lbltiempo = wx.StaticText(self, label='TIEMPO RESTANTE')
+        self.lbltiempo = wx.StaticText(self, label='TIEMPO QUE LLEVAS')
         fuente2=self.lbltiempo.GetFont()
         fuente2.SetPointSize(15)
         self.lbltiempo.SetFont(fuente2)
