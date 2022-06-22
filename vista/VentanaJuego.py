@@ -9,16 +9,19 @@ import time
 from vista.VentanaMensajePerdedor import VentanaMensajePerdedor
 from vista.VentanaMensajeGanador import VentanaMensajeGanador
 
-###
-# Esto es una clase
+##Esto es la clase VentanaJuego que se encarga de mostrar la interfaz del tablero
 #
 
 class VentanaJuego(wx.Dialog):
-    ##
-    # Este es el constructor de la clase VentanaJuego
+    
+    ##Este es el constructor de la clase VentanaJuego
+    #@param parent Objeto grafico padre del Dialog
+    #@param filas Sirve para obtener el numero de filas de cada juego
+    #@param columnas Sirve para obtener el numero de columnas de cada juego
+    #@param tiempo Sirve para obtener el tiempo de cada juego
+    #@param tipo Sirve para obtener que tipo de reloj utizara el juego
     #
-
-    def __init__ (self,parent,filas,columnas, tiempo,tipo):
+    def __init__ (self, parent, filas, columnas, tiempo, tipo):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Memoriza", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         
         
@@ -92,16 +95,17 @@ class VentanaJuego(wx.Dialog):
         #Se muestra todo a la vez
         self.Show()
     
-    ##
-    # Esta funcion sirve para que inicie el reloj 
+    ##Esta funcion sirve para inicializar el tiempo una vez se aprete la primera carta.
+    #@param event Sirve para inicializar un evento de wx.Time, en este caso en None
     #
-    # @param e Sirve para inicializar un evento, en este caso inicializa en None
-    #
-    def InicioReloj(self, e=None):
+    def InicioReloj(self, event=None):
         if not self.timer.IsRunning():
             self.timer.Start(1000)
-
-    def TerminoReloj(self, e):
+            
+    ##Esta funcion sirve para ir desminuyendo el contador del reloj y posteriormente mostrarlo en pantalla.
+    #@param event Sirve para inicializar un evento de wx.Timer.
+    #
+    def TerminoReloj(self, event):
         if self.counter == -1:
             self.timer.Stop()
             self.Hide()
@@ -115,15 +119,24 @@ class VentanaJuego(wx.Dialog):
 
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
         
-    def Cronometro(self,e):
+    ##Esta funcion sirve para ir aumentando el contador del reloj y posteriormente mostrarlo en pantalla.
+    #@param event Sirve para inicializar un evento de wx.Timer.
+    #   
+    def Cronometro(self,event):
         minutos = self.counter // 60
         segundos = self.counter - (minutos * 60)
         self.counter += 1
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
         
+    ##Funcion temporal encargada de bloquear que la primera carta no se pueda hacer click dos veces y contar como par.
+    #@param event Sirve para inicializar un evento
+    #
     def CartasTemp(self,event):
         pass
-        
+    
+    ##Funcion encargada de verificar si son pares o no, en caso de que sean añadir un contador; ademas se encarga de que la carta se de vuelta una vez se haga click.
+    #@param event Sirve para inicializar el evento GetName.
+    #
     def ContarCartas(self,event):
         self.InicioReloj()
         self.clicks +=1
@@ -144,7 +157,6 @@ class VentanaJuego(wx.Dialog):
             
             image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
             boton.SetBitmap(image)
-            print("segundacarta")
             if nombreboton == self.nCarta:
                 time.sleep(0)
                 boton.Disable()

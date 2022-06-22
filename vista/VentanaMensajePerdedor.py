@@ -5,7 +5,14 @@ Created on 21 jun 2022
 '''
 import wx
 
+##Esto es la clase VentanaMensajePerdedor encargada de mostrar la ventana de dialogo del mensaje perdedor
+#
+
 class VentanaMensajePerdedor(wx.Dialog):
+    
+    ##Este es el constructor de la clase VentanaMensajePerdedor
+    # @param parent Objeto grafico padre del Dialog
+    #
 
     def __init__ (self, parent):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Mensaje", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(600, 200))
@@ -31,6 +38,9 @@ class VentanaMensajePerdedor(wx.Dialog):
         #Para que la ventana se abra en el centro de la pantalla
         self.Centre(True)
         
+    ##Funcion encargada de cerrar la VentanaMensajePerdedor
+    # @param i Inicializa un evento
+    #  
     def FinDePartida(self, i):
         VentanaMensajePerdedor(self)
         self.Destroy()

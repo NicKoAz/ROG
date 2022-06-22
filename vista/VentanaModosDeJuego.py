@@ -6,8 +6,14 @@ Created on 21 jun 2022
 import wx
 from vista.VentanaJuego import VentanaJuego
 
-class VentanaModosDeJuego(wx.Dialog):
+##Esto es la Clase VentanaModosDeJuego que se encarga de mostrar la ventana de dialogo de los modos de juego
+#
 
+class VentanaModosDeJuego(wx.Dialog):
+    
+    ##Constructor de la clase VentanasModosDeJuego
+    # @param parent Objeto grafico padre del Dialog
+    #
     def __init__ (self, parent):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Modos De Juego", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(568, 400))
         
@@ -47,11 +53,13 @@ class VentanaModosDeJuego(wx.Dialog):
         #Para que la ventana se abra en el centro de la pantalla
         self.Centre(True)
         
-    #Funcion que permite guardar el nombre del boton en el que se hizo click y abrir la ventana del juego
-        
-    def OnClick(self,event):
+    ##Funcion encargada de guardar el nombre del boton en el que se hizo click y abrir la ventana de juego
+    # @param event inicializa el evento GetLabel
+    #
+    def OnClick(self, event):
         labelbotones=event.GetEventObject().GetLabel()
         self.Hide()
+        
         if labelbotones=="CONTRARELOJ-FACIL":
             ventanaJuego=VentanaJuego(self,4,4,90,1)
             
@@ -70,7 +78,5 @@ class VentanaModosDeJuego(wx.Dialog):
         elif labelbotones=="MODO LIBRE-DIFICIL":
             ventanaJuego=VentanaJuego(self,4,7,0,2)
             
-        
-        
         ventanaJuego.ShowModal()
         ventanaJuego.Destroy()

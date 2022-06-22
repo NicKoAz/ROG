@@ -5,8 +5,15 @@ Created on 21 jun 2022
 '''
 import wx
 
-class VentanaMensajeGanador(wx.Dialog):
+##Esto es la clase VentanaMensajeGanador, encargada de mostrar la ventana de dialogo del mensaje Ganador
+#
 
+class VentanaMensajeGanador(wx.Dialog):
+    
+    ##Este es el constructor de la clase VentanaMensajeGanador
+    # @param parent Objeto grafico padre del Dialog
+    #
+    
     def __init__ (self, parent):
         wx.Dialog.__init__(self, parent, wx.NewId(), title = "Mensaje", style = wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),size=(600, 200))
         
@@ -31,6 +38,9 @@ class VentanaMensajeGanador(wx.Dialog):
         #Para que la ventana se abra en el centro de la pantalla
         self.Centre(True)
         
+    ##Funcion encargada de cerrar la VentanaMensajeGanador
+    # @param i Inicializa un evento
+    #  
     def FinDePartida(self, i):
         VentanaMensajeGanador(self)
         self.Destroy()

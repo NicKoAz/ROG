@@ -112,6 +112,24 @@
   \newunicodechar{²}{${}^{2}$}% Superscript two
   \newunicodechar{³}{${}^{3}$}% Superscript three
 
+% Hyperlinks (required, but should be loaded last)
+\ifpdf
+  \usepackage[pdftex,pagebackref=true]{hyperref}
+\else
+  \ifxetex
+    \usepackage[pagebackref=true]{hyperref}
+  \else
+    \usepackage[ps2pdf,pagebackref=true]{hyperref}
+  \fi
+\fi
+
+\hypersetup{%
+  colorlinks=true,%
+  linkcolor=blue,%
+  citecolor=blue,%
+  unicode%
+}
+
 % Custom commands
 \newcommand{\clearemptydoublepage}{%
   \newpage{\pagestyle{empty}\cleardoublepage}%
@@ -128,6 +146,10 @@
 \begin{document}
 
 % Titlepage & ToC
+\hypersetup{pageanchor=false,
+             bookmarksnumbered=true,
+             pdfencoding=unicode
+            }
 \pagenumbering{alph}
 \begin{titlepage}
 \vspace*{7cm}
@@ -142,8 +164,30 @@
 \tableofcontents
 \clearemptydoublepage
 \pagenumbering{arabic}
+\hypersetup{pageanchor=true}
 
 %--- Begin generated contents ---
+\chapter{Namespace Index}
+\input{namespaces}
+\chapter{Hierarchical Index}
+\input{hierarchy}
+\chapter{Class Index}
+\input{annotated}
+\chapter{Namespace Documentation}
+\input{namespacevista_1_1_main}
+\input{namespacevista_1_1_ventana_juego}
+\input{namespacevista_1_1_ventana_mensaje_ganador}
+\input{namespacevista_1_1_ventana_mensaje_perdedor}
+\input{namespacevista_1_1_ventana_modos_de_juego}
+\input{namespacevista_1_1_ventana_principal}
+\chapter{Class Documentation}
+\input{classcontrolador_1_1_controlador_1_1_controlador}
+\input{classmodelo_1_1_modelo_1_1_modelo}
+\input{classvista_1_1_ventana_juego_1_1_ventana_juego}
+\input{classvista_1_1_ventana_mensaje_ganador_1_1_ventana_mensaje_ganador}
+\input{classvista_1_1_ventana_mensaje_perdedor_1_1_ventana_mensaje_perdedor}
+\input{classvista_1_1_ventana_modos_de_juego_1_1_ventana_modos_de_juego}
+\input{classvista_1_1_ventana_principal_1_1_ventana_principal}
 %--- End generated contents ---
 
 % Index

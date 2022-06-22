@@ -11,8 +11,7 @@ Created on 21 jun 2022
 import wx
 from vista.VentanaModosDeJuego import VentanaModosDeJuego
 
-###
-# Esto es una clase
+##Esto es la clase VentanaPrincipal que se encarga de mostrar la ventana principal del juego
 #
 
 class VentanaPrincipal(wx.Frame):
@@ -57,9 +56,7 @@ class VentanaPrincipal(wx.Frame):
         #Para que la ventana se abra en el centro de la pantalla
         self.Centre(True)
 
-    ##
-    # Esta funcion sirve para abrir la Ventana de Modos de Juego 
-    #
+    ##Esta funcion sirve para abrir la Ventana de Modos de Juego 
     # @param i Sirve para inicializar un evento 
     #
     def InicioJuego(self,i):
@@ -68,9 +65,7 @@ class VentanaPrincipal(wx.Frame):
         ventanaMode.ShowModal()
         ventanaMode.Destroy()
     
-    ##
-    #Esta funcion sirve para abrir la Ventana de Modos de Juego
-    # 
+    ##Esta funcion sirve para cerrar la VentanaPrincipal
     # @param i Sirve para inicializar un evento 
     #
     def FinDelJuego(self,i):
