@@ -11,7 +11,7 @@ Created on 21 jun 2022
 import wx
 from vista.VentanaModosDeJuego import VentanaModosDeJuego
 
-##Esto es la clase VentanaPrincipal que se encarga de mostrar la ventana principal del juego
+##Esto es la clase VentanaPrincipal que se encarga de mostrar la ventana principal del juego.
 #
 
 class VentanaPrincipal(wx.Frame):

@@ -10,7 +10,7 @@ import wx
 
 class VentanaMensajeGanador(wx.Dialog):
     
-    ##Este es el constructor de la clase VentanaMensajeGanador
+    ##Este es el constructor de la clase VentanaMensajeGanador.
     # @param parent Objeto grafico padre del Dialog
     #
     

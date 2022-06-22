@@ -95,14 +95,14 @@ class VentanaJuego(wx.Dialog):
         #Se muestra todo a la vez
         self.Show()
     
-    ##Esta funcion sirve para inicializar el tiempo una vez se aprete la primera carta.
-    #@param event Sirve para inicializar un evento de wx.Time, en este caso en None
+    ##Esta funcion sirve para inicializar el tiempo una vez se aprete la primera carta
+    #@param event Sirve para inicializar un evento de wx.Timer, en este caso en None
     #
     def InicioReloj(self, event=None):
         if not self.timer.IsRunning():
             self.timer.Start(1000)
             
-    ##Esta funcion sirve para ir desminuyendo el contador del reloj y posteriormente mostrarlo en pantalla.
+    ##Esta funcion sirve para ir desminuyendo el contador del reloj y posteriormente mostrarlo en pantalla
     #@param event Sirve para inicializar un evento de wx.Timer.
     #
     def TerminoReloj(self, event):
@@ -119,7 +119,7 @@ class VentanaJuego(wx.Dialog):
 
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
         
-    ##Esta funcion sirve para ir aumentando el contador del reloj y posteriormente mostrarlo en pantalla.
+    ##Esta funcion sirve para ir aumentando el contador del reloj y posteriormente mostrarlo en pantalla
     #@param event Sirve para inicializar un evento de wx.Timer.
     #   
     def Cronometro(self,event):
@@ -128,13 +128,13 @@ class VentanaJuego(wx.Dialog):
         self.counter += 1
         self.lbl1.SetLabel(f"{str(minutos)}:{str(segundos)}")
         
-    ##Funcion temporal encargada de bloquear que la primera carta no se pueda hacer click dos veces y contar como par.
+    ##Funcion temporal encargada de bloquear que la primera carta no se pueda hacer click dos veces y contar como par
     #@param event Sirve para inicializar un evento
     #
     def CartasTemp(self,event):
         pass
     
-    ##Funcion encargada de verificar si son pares o no, en caso de que sean añadir un contador; ademas se encarga de que la carta se de vuelta una vez se haga click.
+    ##Funcion encargada de verificar si son pares o no, en caso de que sean agregar un contador; ademas se encarga de que la carta se de vuelta una vez se haga click
     #@param event Sirve para inicializar el evento GetName.
     #
     def ContarCartas(self,event):

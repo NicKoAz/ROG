@@ -11,7 +11,7 @@ from vista.VentanaJuego import VentanaJuego
 
 class VentanaModosDeJuego(wx.Dialog):
     
-    ##Constructor de la clase VentanasModosDeJuego
+    ##Constructor de la clase VentanasModosDeJuego.
     # @param parent Objeto grafico padre del Dialog
     #
     def __init__ (self, parent):
