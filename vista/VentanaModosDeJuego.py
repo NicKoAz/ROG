@@ -72,7 +72,5 @@ class VentanaModosDeJuego(wx.Dialog):
         elif labelbotones=="MODO LIBRE-DIFICIL":
             ventanaJuego=VentanaJuego(self,4,7,0,2)
             
-        
-        
         ventanaJuego.ShowModal()
         ventanaJuego.Destroy()

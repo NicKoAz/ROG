@@ -10,8 +10,6 @@ from vista.VentanaMensajePerdedor import VentanaMensajePerdedor
 from vista.VentanaMensajeGanador import VentanaMensajeGanador
 
 
-
-
 class VentanaJuego(wx.Dialog):
 
     def __init__ (self,parent,filas,columnas, tiempo,tipo):
@@ -135,7 +133,6 @@ class VentanaJuego(wx.Dialog):
             
             image=wx.Image("../Cards/"+nombreboton+".png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
             boton.SetBitmap(image)
-            print("segundacarta")
             if nombreboton == self.nCarta:
                 time.sleep(0)
                 
@@ -143,7 +140,6 @@ class VentanaJuego(wx.Dialog):
                 self.carta.Disable()
                 boton.SetBitmapDisabled(image)
                 self.carta.SetBitmapDisabled(image)
-                #print("Son pares")
                 self.contPares+=1
                 self.clicks=0
             elif nombreboton != self.nCarta:
