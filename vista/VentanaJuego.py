@@ -76,7 +76,7 @@ class VentanaJuego(wx.Dialog):
         rdm.extend(rdm)
         random.shuffle(rdm)
         
-        #Agregando sizer
+        #Agregando botones con Bitmap
         for i in (rdm):
             imagefile=wx.Image("../Cards/back.png", wx.BITMAP_TYPE_PNG).ConvertToBitmap()
             btn=str(i)
@@ -178,7 +178,8 @@ class VentanaJuego(wx.Dialog):
             self.carta=boton
             self.nCarta=nombreboton
             self.clicks=1
-        
+            
+        #Cuando se tiene todos los pares muestra en pantalla la ventana mensaje ganador
         if self.contPares==self.par:
             self.timer.Stop()
             self.Hide()
